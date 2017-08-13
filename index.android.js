@@ -1,5 +1,5 @@
-import { AppRegistry } from "react-native";
+import { AppRegistry } from 'react-native';
 
-import Main from "./src/Main";
+import Main from './src/Main';
 
-AppRegistry.registerComponent("HeadlinesReact", () => Main);
+AppRegistry.registerComponent('HeadlinesReact', () => Main);
