@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import React from 'react';
+import { StyleSheet, View, Image } from 'react-native';
 import {
   Container,
   Content,
@@ -9,9 +9,9 @@ import {
   Tabs,
   TabHeading,
   Text
-} from "native-base";
+} from 'native-base';
 
-import mockData from "../mocks/trending";
+import mockData from '../mocks/trending';
 
 export default function Highlights() {
   const highlightsGrid = mockData.keywords.map(keyword => {
@@ -43,24 +43,24 @@ export default function Highlights() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap"
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   item: {
     padding: 3,
     height: 300,
-    width: "50%"
+    width: '50%'
   },
   itemImage: {
-    height: "100%",
-    width: "100%",
+    height: '100%',
+    width: '100%',
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end"
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
   },
   itemText: {
-    backgroundColor: "rgba(0, 0, 0, .5)",
-    color: "rgb(255,255,255)",
+    backgroundColor: 'rgba(0, 0, 0, .5)',
+    color: 'rgb(255,255,255)',
     fontSize: 22,
     padding: 4
   }

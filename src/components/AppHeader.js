@@ -1,6 +1,6 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Header, Body, Right, Button, Icon, Title } from "native-base";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Header, Body, Right, Button, Icon, Title } from 'native-base';
 export default function AppHeader() {
   return (
     <Header hasTabs>
