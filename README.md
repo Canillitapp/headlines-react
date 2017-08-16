@@ -1,6 +1,8 @@
 
 # [![Canillitapp](https://github.com/Canillitapp/headlines-api/blob/master/readme-assets/canillitapp_readme_header.png)](https://github.com/Canillitapp)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Canillitapp/headlines-react.svg)](https://greenkeeper.io/)
+
 > it's spelled *can-e-she-tah*.
 
 [![Dependency Status](https://david-dm.org/Canillitapp/headlines-react.svg)](https://david-dm.org/Canillitapp/headlines-react)
