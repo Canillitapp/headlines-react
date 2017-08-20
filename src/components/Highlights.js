@@ -1,15 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
-import {
-  Container,
-  Content,
-  Right,
-  Title,
-  Tab,
-  Tabs,
-  TabHeading,
-  Text
-} from 'native-base';
+import { StyleSheet, View, Image, Text } from 'react-native';
+import { Card } from 'react-native-material-ui';
 
 import mockData from '../mocks/trending';
 
@@ -18,7 +9,7 @@ export default function Highlights() {
     const highlight = mockData.news[keyword];
     const fisrtNews = highlight[0];
     return (
-      <View style={styles.item} key={keyword}>
+      <Card key={keyword}>
         <Image
           resizeMode="cover"
           style={styles.itemImage}
@@ -28,15 +19,13 @@ export default function Highlights() {
             {keyword}
           </Text>
         </Image>
-      </View>
+      </Card>
     );
   });
   return (
-    <Content>
-      <View style={styles.container}>
-        {highlightsGrid}
-      </View>
-    </Content>
+    <View style={styles.container}>
+      {highlightsGrid}
+    </View>
   );
 }
 
