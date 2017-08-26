@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { ThemeProvider } from 'react-native-material-ui';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Header from './components/Header';
-import Highlights from './components/Highlights';
 import News from './components/News';
+
+import SplashScreen from './screens/splash';
+import Highlights from './screens/highlights';
 
 const RootTabs = TabNavigator(
   {
@@ -55,7 +55,7 @@ const RootTabs = TabNavigator(
   }
 );
 
-const AppNav = StackNavigator(
+const Home = StackNavigator(
   {
     Root: {
       screen: RootTabs
@@ -69,17 +69,25 @@ const AppNav = StackNavigator(
     }
   },
   {
-    initialRouteName: 'Root',
-    navigationOptions: {
-      header: props => <Header {...props} />
+    initialRouteName: 'Root'
+  }
+);
+
+const CanillitApp = StackNavigator(
+  {
+    Loader: {
+      screen: SplashScreen
+    },
+    Home: {
+      screen: Home
     }
+  },
+  {
+    initialRouteName: 'Loader',
+    headerMode: 'none'
   }
 );
 
 export default function Main() {
-  return (
-    <ThemeProvider>
-      <AppNav />
-    </ThemeProvider>
-  );
+  return <CanillitApp />;
 }
