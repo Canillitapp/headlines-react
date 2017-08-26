@@ -2,12 +2,14 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { ThemeProvider } from 'react-native-material-ui';
-import { TabNavigator } from 'react-navigation';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import Header from './components/Header';
 import Highlights from './components/Highlights';
+import News from './components/News';
 
-const AppNav = TabNavigator(
+const RootTabs = TabNavigator(
   {
     TrendingTab: {
       screen: Highlights,
@@ -19,7 +21,7 @@ const AppNav = TabNavigator(
       }
     },
     PopularTab: {
-      screen: Highlights,
+      screen: News,
       path: '/popular',
       navigationOptions: {
         title: 'Popular',
@@ -37,7 +39,7 @@ const AppNav = TabNavigator(
       }
     },
     ReactionsTab: {
-      screen: Highlights,
+      screen: News,
       path: '/reactions',
       navigationOptions: {
         title: 'Reacciones',
@@ -46,7 +48,32 @@ const AppNav = TabNavigator(
       }
     }
   },
-  {}
+  {
+    tabBarOptions: {
+      showIcon: true
+    }
+  }
+);
+
+const AppNav = StackNavigator(
+  {
+    Root: {
+      screen: RootTabs
+    },
+    Search: {
+      screen: News,
+      path: '/search/:q',
+      navigationOptions: ({ navigation }) => {
+        title: `Search ${navigation.state.params.q}!`;
+      }
+    }
+  },
+  {
+    initialRouteName: 'Root',
+    navigationOptions: {
+      header: props => <Header {...props} />
+    }
+  }
 );
 
 export default function Main() {
