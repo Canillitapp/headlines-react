@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Image, View, Dimensions, StatusBar } from 'react-native';
 import { RkText, RkTheme } from 'react-native-ui-kitten';
 import ProgressBar from '../components/ProgressBar';
-// import {
-//   KittenTheme
-// } from '../../config/theme';
+import { KittenTheme } from '../config/theme';
 import { NavigationActions } from 'react-navigation';
 import { scale, scaleModerate, scaleVertical } from '../utils/scale';
 
@@ -49,10 +47,9 @@ export default class SplashScreen extends Component {
     return (
       <View style={styles.container}>
         <View>
-          {/* <Image
+          <Image
             style={[styles.image, { width }]}
-            source={require('../../assets/images/splashBack.png')}
-          /> */}
+            source={require('../assets/canillita_2.jpeg')}></Image>
           <View style={styles.text}>
             <RkText rkType="light" style={styles.hero}>
               React Native
@@ -75,7 +72,7 @@ export default class SplashScreen extends Component {
 
 let styles = StyleSheet.create({
   container: {
-    // backgroundColor: KittenTheme.colors.screen.base,
+    backgroundColor: KittenTheme.colors.screen.base,
     justifyContent: 'space-between',
     flex: 1
   },

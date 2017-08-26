@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { bootstrap } from './config/bootstrap';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -9,6 +10,7 @@ import News from './components/News';
 import SplashScreen from './screens/splash';
 import Highlights from './screens/highlights';
 
+bootstrap();
 const RootTabs = TabNavigator(
   {
     TrendingTab: {
