@@ -49,13 +49,14 @@ export default class SplashScreen extends Component {
         <View>
           <Image
             style={[styles.image, { width }]}
-            source={require('../assets/canillita_2.jpeg')}></Image>
+            source={require('../assets/canillita_2.jpeg')}
+          />
           <View style={styles.text}>
             <RkText rkType="light" style={styles.hero}>
               React Native
             </RkText>
             <RkText rkType="logo" style={styles.appName}>
-              UI Kitten
+              Canillitapp
             </RkText>
           </View>
         </View>

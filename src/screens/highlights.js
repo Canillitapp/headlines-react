@@ -41,7 +41,9 @@ export default class Highlights extends Component {
         <RkCard rkType="imgBlock" style={styles.card}>
           <Image rkCardImg source={{ uri: img_url }} />
           <View rkCardImgOverlay rkCardContent style={styles.overlay}>
-            <RkText rkType="header4 inverseColor"> {keyword} </RkText>
+            <RkText rkType="header4 inverseColor">
+              {keyword}
+            </RkText>
             <RkText style={styles.time} rkType="secondary2 inverseColor">
               {date.fromNow()}
             </RkText>
@@ -55,7 +57,9 @@ export default class Highlights extends Component {
           </View>
           <View rkCardFooter>
             <View style={styles.userInfo}>
-              <RkText rkType="header6"> {source_name} </RkText>
+              <RkText rkType="header6">
+                {source_name}
+              </RkText>
             </View>
             <RkText rkType="secondary2 hintColor">
               {date.format('LT')}
