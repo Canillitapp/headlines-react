@@ -1,37 +1,74 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
-  build:
+  test:
     docker:
-      # specify the version you desire here
       - image: circleci/node:latest
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: yarn install
-
+          - test-npm-{{ checksum "package.json" }}
+          - test-npm-
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      - run: yarn test
+          key: test-npm-{{ checksum "package.json" }}
+      - run: 
+          name: Linter
+          command: npm run lint
+      - run:   
+          name: Tests
+          command: npm test
+  build:
+    docker:
+      - image: alexruzzarin/rn-android:latest
+    working_directory: ~/repo
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - build-npm-{{ checksum "package.json" }}
+          - build-npm-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: build-npm-{{ checksum "package.json" }}
+      - run: 
+          name: Linter
+          command: npm run lint
+      - run:   
+          name: Tests
+          command: npm test
+      - restore_cache:
+          key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
+      - run:   
+          name: Building
+          command: cd android && ./gradlew assembleRelease
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
+      - store_artifacts:
+          path: android/app/build/outputs/apk
+          destination: APKs
+workflows:
+  version: 2
+  test_and_build:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only:
+                - /.*/
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - test
