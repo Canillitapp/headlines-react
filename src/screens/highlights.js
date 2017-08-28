@@ -29,7 +29,7 @@ export default class Highlights extends Component {
 
   _renderItem(info) {
     const { keyword, firstNews } = info.item;
-    const { img_url, title, source_name } = firstNews;
+    const { img_url: imgUrl, title, source_name: sourceName } = firstNews;
     const date = moment(firstNews.date, 'X');
     return (
       <TouchableOpacity
@@ -39,7 +39,7 @@ export default class Highlights extends Component {
           this.props.navigation.navigate('Article', { id: info.item.keyword })}
       >
         <RkCard rkType="imgBlock" style={styles.card}>
-          <Image rkCardImg source={{ uri: img_url }} />
+          <Image rkCardImg source={{ uri: imgUrl }} />
           <View rkCardImgOverlay rkCardContent style={styles.overlay}>
             <RkText rkType="header4 inverseColor">
               {keyword}
@@ -58,7 +58,7 @@ export default class Highlights extends Component {
           <View rkCardFooter>
             <View style={styles.userInfo}>
               <RkText rkType="header6">
-                {source_name}
+                {sourceName}
               </RkText>
             </View>
             <RkText rkType="secondary2 hintColor">

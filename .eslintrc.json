@@ -1,8 +1,37 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["prettier"],
-  "extends": ["prettier"],
+  "plugins": [
+    "react",
+    "react-native",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "prettier",
+    "prettier/react"
+  ],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }]
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false
+      }
+    ],
+    "require-jsdoc": "off",
+    "react/prop-types": "off",
+    "react-native/no-color-literals": "off"
+  },
+  "env": {
+    "es6": true,
+    "node": true
   }
 }

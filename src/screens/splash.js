@@ -1,74 +1,46 @@
-import React, { Component } from 'react';
-import { StyleSheet, Image, View, Dimensions, StatusBar } from 'react-native';
+import React from 'react';
+import { connect } from 'cerebral/react';
+import { state } from 'cerebral/tags';
+import { StyleSheet, Image, View, Dimensions } from 'react-native';
 import { RkText, RkTheme } from 'react-native-ui-kitten';
+
 import ProgressBar from '../components/ProgressBar';
 import { KittenTheme } from '../config/theme';
-import { NavigationActions } from 'react-navigation';
-import { scale, scaleModerate, scaleVertical } from '../utils/scale';
+import { scale, scaleVertical } from '../utils/scale';
 
-let timeFrame = 500;
+export default connect(
+  {
+    loadProgress: state`app.loadProgress`
+  },
+  SplashScreen
+);
 
-export default class SplashScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      progress: 0
-    };
-  }
-
-  componentDidMount() {
-    StatusBar.setHidden(true, 'none');
-    // RkTheme.setTheme(KittenTheme);
-
-    this.timer = setInterval(() => {
-      if (this.state.progress == 1) {
-        clearInterval(this.timer);
-        setTimeout(() => {
-          StatusBar.setHidden(false, 'slide');
-          let toHome = NavigationActions.reset({
-            index: 0,
-            actions: [NavigationActions.navigate({ routeName: 'Home' })]
-          });
-          this.props.navigation.dispatch(toHome);
-        }, timeFrame);
-      } else {
-        let random = Math.random() * 0.5;
-        let progress = this.state.progress + random;
-        if (progress > 1) {
-          progress = 1;
-        }
-        this.setState({ progress });
-      }
-    }, timeFrame);
-  }
-
-  render() {
-    let width = Dimensions.get('window').width;
-    return (
-      <View style={styles.container}>
-        <View>
-          <Image
-            style={[styles.image, { width }]}
-            source={require('../assets/canillita_2.jpeg')}
-          />
-          <View style={styles.text}>
-            <RkText rkType="light" style={styles.hero}>
-              React Native
-            </RkText>
-            <RkText rkType="logo" style={styles.appName}>
-              Canillitapp
-            </RkText>
-          </View>
-        </View>
-        <ProgressBar
-          color={RkTheme.current.colors.accent}
-          style={styles.progress}
-          progress={this.state.progress}
-          width={scale(320)}
+function SplashScreen({ loadProgress }) {
+  let width = Dimensions.get('window').width;
+  return (
+    <View style={styles.container}>
+      <View>
+        <Image
+          style={[styles.image, { width }]}
+          source={require('../assets/canillita_2.jpeg')}
         />
+        <View style={styles.text}>
+          <RkText rkType="light" style={styles.hero}>
+            React Native
+          </RkText>
+          <RkText rkType="logo" style={styles.appName}>
+            Canillitapp
+          </RkText>
+        </View>
       </View>
-    );
-  }
+      <ProgressBar
+        color={RkTheme.current.colors.accent}
+        style={styles.progress}
+        progress={loadProgress}
+        width={scale(320)}
+      />
+    </View>
+  );
 }
 
 let styles = StyleSheet.create({
