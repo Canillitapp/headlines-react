@@ -1,0 +1,516 @@
+export default [
+  {
+    reaction_id: 894,
+    reaction: '👌',
+    user_id: 1,
+    news_id: 162941,
+    date: 1496551106,
+    news: {
+      news_id: 162941,
+      url:
+        'http://www.infobae.com/sociedad/policiales/2017/05/30/la-policia-lo-paro-porque-lo-noto-nervioso-y-termino-cayendo-la-banda-de-los-iphone/',
+      title:
+        'La policía detuvo a un hombre porque lo notó nervioso y terminó cayendo la banda de los iPhone',
+      date: 1496232332,
+      source_id: 9,
+      img_url:
+        'http://www.infobae.com/new-resizer/SFw7MwTw6sy9sRWPFaVvJhe5Qh8=/1200x0/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/05/30164722/DESBARATAN-LA-BANDA-DE-LOS-IPHONE-1920-3.png?token=bar'
+    }
+  },
+  {
+    reaction_id: 880,
+    reaction: '👍',
+    user_id: 1,
+    news_id: 164510,
+    date: 1496422189,
+    news: {
+      news_id: 164510,
+      url:
+        'http://tn.com.ar/internacional/make-our-planet-great-again-macron-parafraseo-trump-para-instar-defender-el-acuerdo-de-paris_796891',
+      title:
+        '"Make our planet great again": Macron parafraseó a Trump para instar a defender el acuerdo de París',
+      date: 1496420730,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/06/02/emmanuel-macron.jpg'
+    }
+  },
+  {
+    reaction_id: 874,
+    reaction: '🍆',
+    user_id: 1,
+    news_id: 161675,
+    date: 1496074953,
+    news: {
+      news_id: 161675,
+      url:
+        'http://exitoina.perfil.com/2017-05-29-465639-nicole-neumann-mas-ardiente-que-nunca/',
+      title: 'Nicole Neumann más ardiente que nunca',
+      date: 1496072800,
+      source_id: 8,
+      img_url:
+        'https://i2.wp.com/exitoina.perfil.com/wp-content/uploads/2017/05/0529_nicole_neumann_g.jpg?fit=990,680'
+    }
+  },
+  {
+    reaction_id: 870,
+    reaction: '🤑',
+    user_id: 1,
+    news_id: 159897,
+    date: 1495828343,
+    news: {
+      news_id: 159897,
+      url:
+        'http://www.clarin.com/ieco/bitcoin-alcanza-record-us-700_0_rJMELhrWW.html',
+      title: 'El Bitcoin alcanza un récord de casi US$ 2.700',
+      date: 1495807881,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2016/06/10/BkVysN14e_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 869,
+    reaction: '💵',
+    user_id: 1,
+    news_id: 159897,
+    date: 1495828336,
+    news: {
+      news_id: 159897,
+      url:
+        'http://www.clarin.com/ieco/bitcoin-alcanza-record-us-700_0_rJMELhrWW.html',
+      title: 'El Bitcoin alcanza un récord de casi US$ 2.700',
+      date: 1495807881,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2016/06/10/BkVysN14e_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 868,
+    reaction: '🙄',
+    user_id: 1,
+    news_id: 159951,
+    date: 1495828198,
+    news: {
+      news_id: 159951,
+      url:
+        'http://www.lanacion.com.ar/2027574-samsung-galaxy-s8-preventa-argentina-precio-disponibilidad',
+      title:
+        'Samsung Galaxy S8: desde el domingo estará en preventa en la Argentina',
+      date: 1495812398,
+      source_id: 3,
+      img_url: 'http://bucket.glanacion.com/anexos/fotos/13/2401113.jpg'
+    }
+  },
+  {
+    reaction_id: 860,
+    reaction: '😂',
+    user_id: 1,
+    news_id: 159862,
+    date: 1495805341,
+    news: {
+      news_id: 159862,
+      url:
+        'http://tn.com.ar/musica/hoy/justin-bieber-se-olvido-la-letra-de-despacito-durante-un-show-y-canto-cualquier-cosa-no-conozco-las_795443',
+      title:
+        'Justin Bieber se olvidó la letra de "Despacito" durante un show y cantó cualquier cosa',
+      date: 1495804048,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/05/26/justin-bieber.jpg'
+    }
+  },
+  {
+    reaction_id: 859,
+    reaction: '👍',
+    user_id: 1,
+    news_id: 159209,
+    date: 1495734243,
+    news: {
+      news_id: 159209,
+      url:
+        'http://www.clarin.com/next/twitter-sumo-200-nuevos-emojis-plataformas_0_HJgEKIEbb.html',
+      title: 'Twitter sumó más de 200 nuevos emojis a sus plataformas',
+      date: 1495720909,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2017/05/25/BJMamPEW-_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 839,
+    reaction: '✌️',
+    user_id: 1,
+    news_id: 156706,
+    date: 1495411319,
+    news: {
+      news_id: 156706,
+      url:
+        'http://www.perfil.com//politica/julian-dominguez-cristina-no-se-va-a-presentar-y-eso-es-mejor-para-el-peronismo.phtml',
+      title:
+        'Julián Domínguez: “Cristina no se va a presentar y eso es mejor para el peronismo”',
+      date: 1495394192,
+      source_id: 8,
+      img_url:
+        'http://www.perfil.com/orinoco-files/media/images/raw/2017/01/15/julian-dominguez-hablo-de-la-interna-del-pj.jpg'
+    }
+  },
+  {
+    reaction_id: 836,
+    reaction: '😦',
+    user_id: 1,
+    news_id: 155678,
+    date: 1495239336,
+    news: {
+      news_id: 155678,
+      url:
+        'http://www.clarin.com/extra-show/fama/sospecha-mujer-chris-cornell-suicidio-cantante_0_HkkomWplW.html',
+      title:
+        'La sospecha de la mujer de Chris Cornell tras el suicidio del cantante',
+      date: 1495238298,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2017/05/18/ByTeSbaeb_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 835,
+    reaction: '😳',
+    user_id: 1,
+    news_id: 155464,
+    date: 1495229640,
+    news: {
+      news_id: 155464,
+      url:
+        'http://www.lanacion.com.ar/2025478-dos-cazas-chinos-interceptaron-un-avion-militar-de-los-eeuu',
+      title: 'Dos cazas chinos interceptaron un avión militar de los EE.UU.',
+      date: 1495221395,
+      source_id: 3,
+      img_url: 'http://bucket.glanacion.com/anexos/fotos/81/2458281.jpg'
+    }
+  },
+  {
+    reaction_id: 834,
+    reaction: '👍',
+    user_id: 1,
+    news_id: 155539,
+    date: 1495229608,
+    news: {
+      news_id: 155539,
+      url:
+        'http://tn.com.ar/tecno/f5/google-mejora-los-emojis-y-van-tener-mucha-mas-onda_794106',
+      title: 'Google mejora los emojis y van a tener mucha más onda',
+      date: 1495226213,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/05/19/android-o-emojis.jpg'
+    }
+  },
+  {
+    reaction_id: 831,
+    reaction: '😮',
+    user_id: 1,
+    news_id: 155560,
+    date: 1495229447,
+    news: {
+      news_id: 155560,
+      url:
+        'https://www.pagina12.com.ar/38801-el-pro-se-quedo-sin-cambiemos-en-la-ciudad',
+      title:
+        'Trump desata incidente diplomático al confundir Siria con Rumania',
+      date: 1495228605,
+      source_id: 1,
+      img_url:
+        'https://www.dropbox.com/s/1iw3obrw9xp32bu/donald-trump-grow-up.jpg?dl=1'
+    }
+  },
+  {
+    reaction_id: 829,
+    reaction: '😄',
+    user_id: 1,
+    news_id: 154773,
+    date: 1495214042,
+    news: {
+      news_id: 154773,
+      url:
+        'http://www.perfil.com//internacional/el-misterioso-tuit-de-house-of-cards-sobre-la-crisis-de-brasil.phtml',
+      title: 'El ingenioso tuit de “House of Cards” sobre la crisis de Brasil',
+      date: 1495139197,
+      source_id: 8,
+      img_url:
+        'http://www.perfil.com/orinoco-files/media/images/raw/2017/05/18/0518houseofcardsg.jpg'
+    }
+  },
+  {
+    reaction_id: 823,
+    reaction: '😢',
+    user_id: 1,
+    news_id: 154348,
+    date: 1495117465,
+    news: {
+      news_id: 154348,
+      url:
+        'http://www.minutouno.com/notas/1552040-murio-chris-cornell-cantante-soundgarden-y-audioslave',
+      title: 'Murió Chris Cornell, cantante de Soundgarden y Audioslave',
+      date: 1495090380,
+      source_id: 11,
+      img_url:
+        'http://static.minutouno.com/adjuntos/150/imagenes/011/426/0011426269.jpg'
+    }
+  },
+  {
+    reaction_id: 822,
+    reaction: '😢',
+    user_id: 1,
+    news_id: 154342,
+    date: 1495117461,
+    news: {
+      news_id: 154342,
+      url: 'http://tn.com.ar/musica/hoy/murio-el-musico-chris-cornell_793641',
+      title: 'Murió el músico Chris Cornell',
+      date: 1495095201,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/05/18/cornell.jpg'
+    }
+  },
+  {
+    reaction_id: 808,
+    reaction: '👏',
+    user_id: 1,
+    news_id: 153276,
+    date: 1494974822,
+    news: {
+      news_id: 153276,
+      url:
+        'http://www.clarin.com/sociedad/acoso-joven-calle-debera-hacer-curso-violencia-genero_0_SyO_gAueW.html',
+      title:
+        'Acosó a una joven en la calle y deberá hacer un curso sobre violencia de género',
+      date: 1494962469,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2017/05/16/BkU3XhdeW_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 802,
+    reaction: '😂',
+    user_id: 1,
+    news_id: 153155,
+    date: 1494959689,
+    news: {
+      news_id: 153155,
+      url:
+        'http://www.clarin.com/mundo/casa-blanca-ahora-dice-conversacion-donald-trump-rusos-totalmente-apropiada_0_SkQvfjOx-.html',
+      title:
+        'La Casa Blanca ahora dice que "la conversación que Donald Trump tuvo con los rusos fue totalmente apropiada"',
+      date: 1494952030,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2017/05/16/SJAKwideZ_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 801,
+    reaction: '😂',
+    user_id: 1,
+    news_id: 153160,
+    date: 1494959678,
+    news: {
+      news_id: 153160,
+      url:
+        'http://www.perfil.com//internacional/insolito-ahora-trump-desmiente-a-la-casa-blanca.phtml',
+      title: 'Insólito: ahora Trump desmiente a la Casa Blanca',
+      date: 1494952595,
+      source_id: 8,
+      img_url:
+        'http://www.perfil.com/orinoco-files/media/images/raw/2017/05/16/0516trumpg.jpg'
+    }
+  },
+  {
+    reaction_id: 800,
+    reaction: '👍',
+    user_id: 1,
+    news_id: 153002,
+    date: 1494959013,
+    news: {
+      news_id: 153002,
+      url:
+        'http://tn.com.ar/policiales/escracharon-al-femicida-que-mato-descuartizo-y-quemo-su-novia-de-15-anos-en-bahia-blanca_793156',
+      title:
+        'Escracharon al femicida que mató, descuartizó y quemó a su novia de 15 años en Bahía Blanca',
+      date: 1494938690,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/05/16/cuchan.jpg'
+    }
+  },
+  {
+    reaction_id: 799,
+    reaction: '🍆',
+    user_id: 1,
+    news_id: 153110,
+    date: 1494958881,
+    news: {
+      news_id: 153110,
+      url:
+        'http://hombre.perfil.com/wanda-ratonea-una-foto-junto-zaira-16747-2017-05-16',
+      title: 'Wanda y Zaira Nara ratoneando en Instagram',
+      date: 1494947802,
+      source_id: 8,
+      img_url:
+        'http://hombre.perfil.com/wp-content/uploads/2017/05/00_Wanda_Zaira_H.jpg'
+    }
+  },
+  {
+    reaction_id: 798,
+    reaction: '👎',
+    user_id: 1,
+    news_id: 153129,
+    date: 1494958584,
+    news: {
+      news_id: 153129,
+      url:
+        'http://tn.com.ar/show/glamour/asi-era-antes-la-evolucion-de-charlotte-caniggia-con-el-paso-del-tiempo-y-de-las-cirugias_793206',
+      title:
+        'Así era antes: la evolución de Charlotte Caniggia con el paso del tiempo ¡y de las cirugías!',
+      date: 1494948827,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/05/16/charlotte-tapa.jpg'
+    }
+  },
+  {
+    reaction_id: 797,
+    reaction: '🚓',
+    user_id: 1,
+    news_id: 153125,
+    date: 1494958515,
+    news: {
+      news_id: 153125,
+      url:
+        'http://www.perfil.com//policia/desde-la-clandestinidad-hablo-el-profugo-de-la-picada-que-iba-a-240-kmh.phtml',
+      title:
+        'El prófugo de la picadas en la 9 de Julio desafió: "A tope no es crimen"',
+      date: 1494948997,
+      source_id: 8,
+      img_url:
+        'http://www.perfil.com/orinoco-files/media/images/raw/2017/05/16/0516alejandrobiscardig.jpg'
+    }
+  },
+  {
+    reaction_id: 796,
+    reaction: '😡',
+    user_id: 1,
+    news_id: 153125,
+    date: 1494958510,
+    news: {
+      news_id: 153125,
+      url:
+        'http://www.perfil.com//policia/desde-la-clandestinidad-hablo-el-profugo-de-la-picada-que-iba-a-240-kmh.phtml',
+      title:
+        'El prófugo de la picadas en la 9 de Julio desafió: "A tope no es crimen"',
+      date: 1494948997,
+      source_id: 8,
+      img_url:
+        'http://www.perfil.com/orinoco-files/media/images/raw/2017/05/16/0516alejandrobiscardig.jpg'
+    }
+  },
+  {
+    reaction_id: 795,
+    reaction: '🙄',
+    user_id: 1,
+    news_id: 153186,
+    date: 1494957025,
+    news: {
+      news_id: 153186,
+      url:
+        'http://www.clarin.com/next/instagram-actualiza-copia-snapchat-filtros-rostros_0_Skst2jde-.html',
+      title:
+        'Instagram se actualiza y le copia a Snapchat los filtros para los rostros',
+      date: 1494955215,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2017/05/16/S1mfNnOeW_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 794,
+    reaction: '🔥',
+    user_id: 1,
+    news_id: 153184,
+    date: 1494957017,
+    news: {
+      news_id: 153184,
+      url:
+        'http://www.clarin.com/next/cocinero-salvo-morir-quemado-gracias-siri-iphone_0_HkpSe5dlZ.html',
+      title: 'Un cocinero se salvó de morir quemado gracias a Siri de iPhone',
+      date: 1494955390,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2016/05/05/SkstC8lNe_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 793,
+    reaction: '😯',
+    user_id: 1,
+    news_id: 153184,
+    date: 1494957012,
+    news: {
+      news_id: 153184,
+      url:
+        'http://www.clarin.com/next/cocinero-salvo-morir-quemado-gracias-siri-iphone_0_HkpSe5dlZ.html',
+      title: 'Un cocinero se salvó de morir quemado gracias a Siri de iPhone',
+      date: 1494955390,
+      source_id: 2,
+      img_url: 'https://images.clarin.com/2016/05/05/SkstC8lNe_600x338.jpg'
+    }
+  },
+  {
+    reaction_id: 792,
+    reaction: '😳',
+    user_id: 1,
+    news_id: 153198,
+    date: 1494956977,
+    news: {
+      news_id: 153198,
+      url:
+        'http://tn.com.ar/internacional/condenan-una-maestra-dos-anos-de-prision-por-tener-sexo-con-un-alumno-de-18-anos-con-la-ayuda-de-su_793239',
+      title:
+        'Condenan a una maestra a dos años de prisión por tener sexo con un alumno de 18 años con la ayuda de su marido',
+      date: 1494955846,
+      source_id: 1,
+      img_url:
+        'http://cdn.tn.com.ar/sites/default/files/styles/470x269/public/2017/05/16/maestra_marido.jpg'
+    }
+  },
+  {
+    reaction_id: 791,
+    reaction: '🙄',
+    user_id: 1,
+    news_id: 153199,
+    date: 1494956963,
+    news: {
+      news_id: 153199,
+      url:
+        'http://www.lanacion.com.ar/2024349-juliana-awada-entre-pantacourts-y-look-repetido-en-sus-ultimas-actividades-en-china',
+      title:
+        'Juliana Awada, entre pantacourts y look repetido en sus últimas actividades en China',
+      date: 1494956792,
+      source_id: 3,
+      img_url: 'http://bucket.glanacion.com/anexos/fotos/38/2456138.jpg'
+    }
+  },
+  {
+    reaction_id: 785,
+    reaction: '😹',
+    user_id: 1,
+    news_id: 152801,
+    date: 1494905613,
+    news: {
+      news_id: 152801,
+      url:
+        'http://www.perfil.com//politica/fernando-chino-navarro-cristina-no-se-debe-presentar.phtml',
+      title:
+        'Fernando “Chino” Navarro: “Todos hablamos mal de Macri, pero cuando vamos a las votaciones, Macri gana”',
+      date: 1494894998,
+      source_id: 8,
+      img_url:
+        'http://www.perfil.com/orinoco-files/media/images/raw/2013/10/08/fernando-chino-navarro-admitio-errores-en-la-comunicacion-por-la-salud-de-cristina-1008-g1.jpg'
+    }
+  }
+];
