@@ -3,7 +3,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import News from './components/News';
-import SplashScreen from './screens/splash';
+import SplashScreen from './screens/Splash';
 import Highlights from './screens/Highlights';
 
 const iconTrending = () => <Icon name="newspaper-o" color="#fff" size={20} />;
