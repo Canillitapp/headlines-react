@@ -2,7 +2,7 @@ import { StatusBar, StyleSheet } from 'react-native';
 import { RkTheme } from 'react-native-ui-kitten';
 import { KittenTheme } from './theme';
 // import { darkKittenTheme } from './darkTheme';
-import { scale, scaleModerate, scaleVertical } from '../utils/scale';
+import { scale, scaleVertical } from '../utils/scale';
 
 export let bootstrap = () => {
   RkTheme.setTheme(KittenTheme, null);
@@ -44,22 +44,34 @@ export let bootstrap = () => {
     fontSize: 44
   });
 
-  //all font sizes
-  for (let key in RkTheme.current.fonts.sizes) {
+  // all font sizes
+  const fontSizes = RkTheme.current.fonts.sizes;
+  for (let key in fontSizes) {
+    if (!fontSizes.hasOwnProperty(key)) {
+      return;
+    }
     RkTheme.setType('RkText', key, {
       fontSize: theme => theme.fonts.sizes[key]
     });
   }
 
-  //all text colors
-  for (let key in RkTheme.current.colors.text) {
+  // all text colors
+  const colorsText = RkTheme.current.colors.text;
+  for (let key in colorsText) {
+    if (!colorsText.hasOwnProperty(key)) {
+      return;
+    }
     RkTheme.setType('RkText', `${key}Color`, {
       color: theme => theme.colors.text[key]
     });
   }
 
-  //all text line heights
-  for (let key in RkTheme.current.fonts.lineHeights) {
+  // all text line heights
+  const fontsLineHeights = RkTheme.current.fonts.lineHeights;
+  for (let key in fontsLineHeights) {
+    if (!fontsLineHeights.hasOwnProperty(key)) {
+      return;
+    }
     RkTheme.setType('RkText', `${key}Line`, {
       text: {
         lineHeight: theme => theme.fonts.lineHeights[key]
@@ -67,7 +79,7 @@ export let bootstrap = () => {
     });
   }
 
-  //theme text styles
+  // theme text styles
   RkTheme.setType('RkText', 'header1', {
     fontSize: theme => theme.fonts.sizes.h1,
     fontFamily: theme => theme.fonts.family.bold

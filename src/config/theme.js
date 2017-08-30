@@ -1,4 +1,4 @@
-import { scale, scaleVertical } from '../utils/scale';
+import { scale } from '../utils/scale';
 
 const Colors = {
   accent: '#ff2824',
