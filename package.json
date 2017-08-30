@@ -8,8 +8,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@cerebral/http": "^1.0.0",
     "cerebral": "^2.0.0-beta.3",
     "moment": "^2.18.1",
+    "normalizr": "^3.2.3",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.47.2",
     "react-native-ui-kitten": "^2.0.1",
