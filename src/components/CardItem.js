@@ -24,9 +24,7 @@ export default function CardItem({
       <RkCard rkType="imgBlock" style={styles.card}>
         <Image rkCardImg source={{ uri: newsImgUrl }} />
         <View rkCardImgOverlay rkCardContent style={styles.overlay}>
-          <RkText rkType="header4 inverseColor">
-            {topic}
-          </RkText>
+          <RkText rkType="header4 inverseColor">{topic}</RkText>
           <RkText style={styles.time} rkType="secondary2 inverseColor">
             {parsedTopicDate.fromNow()}
           </RkText>
@@ -40,9 +38,7 @@ export default function CardItem({
         </View>
         <View rkCardFooter>
           <View style={styles.userInfo}>
-            <RkText rkType="header6">
-              {newsSource}
-            </RkText>
+            <RkText rkType="header6">{newsSource}</RkText>
           </View>
           <RkText rkType="secondary2 hintColor">
             {parsedNewsDate.format('LT')}
