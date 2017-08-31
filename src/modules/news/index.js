@@ -1,12 +1,20 @@
 import moment from 'moment';
 
+import signals from './signals';
+
 export default {
   state: {
-    nextTrendingDate: moment().format('YYYY-MM-DD'),
     entities: {
       topics: {},
       news: {}
     },
-    trendingTopics: []
-  }
+
+    nextTrendingDate: moment().format('YYYY-MM-DD'),
+    trendingTopics: [],
+
+    popularLoaded: false,
+    popularLoading: false,
+    popular: []
+  },
+  signals
 };

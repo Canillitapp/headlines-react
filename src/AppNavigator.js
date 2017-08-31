@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import News from './components/News';
 import SplashScreen from './screens/Splash';
 import Highlights from './screens/Highlights';
+import Popular from './screens/Popular';
 
 const iconTrending = () => <Icon name="newspaper-o" color="#fff" size={20} />;
 const iconPopular = () => <Icon name="line-chart" color="#fff" size={20} />;
@@ -23,7 +24,7 @@ const RootTabs = TabNavigator(
       }
     },
     PopularTab: {
-      screen: News,
+      screen: Popular,
       path: '/popular',
       navigationOptions: {
         title: 'Popular',
