@@ -1,7 +1,25 @@
 {
-  "name": "HeadlinesReact",
+  "name": "headlines-react",
+  "description": "it's spelled can-e-she-tah",
   "version": "0.0.1",
   "private": true,
+  "bugs": {
+    "url": "https://github.com/Canillitapp/headlines-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Canillitapp/headlines-react.git"
+  },
+  "author": {
+    "name": "Alex Ruzzarin",
+    "url": "https://github.com/alexruzzarin/"
+  },
+  "contributors": [
+    {
+      "name": "Max",
+      "url": "https://github.com/Draska/"
+    }
+  ],
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
