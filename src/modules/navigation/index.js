@@ -1,8 +1,6 @@
 import AppNavigator from '../../AppNavigator';
 
-import navigate from './actions/navigate';
-import navigateToLoader from './actions/navigateToLoader';
-import navigateToHome from './actions/navigateToHome';
+import signals from './signals';
 
 const initialState = AppNavigator.router.getStateForAction(
   AppNavigator.router.getActionForPathAndParams('Loader')
@@ -12,9 +10,5 @@ export default {
   state: {
     nav: initialState
   },
-  signals: {
-    navigate: [navigate],
-    navigateToLoader: [navigateToLoader],
-    navigateToHome: [navigateToHome]
-  }
+  signals
 };

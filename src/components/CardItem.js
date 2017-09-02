@@ -26,7 +26,14 @@ export default function CardItem({
         <View rkCardImgOverlay rkCardContent style={styles.overlay}>
           <RkText rkType="header4 inverseColor">{topic}</RkText>
           <RkText style={styles.time} rkType="secondary2 inverseColor">
-            {parsedTopicDate.fromNow()}
+            {parsedTopicDate.calendar(null, {
+              sameDay: '[Today]',
+              nextDay: '[Tomorrow]',
+              nextWeek: 'dddd',
+              lastDay: '[Yesterday]',
+              lastWeek: '[Last] dddd',
+              sameElse: 'L'
+            })}
           </RkText>
         </View>
         <View rkCardContent>

@@ -1,6 +1,6 @@
 import { NavigationActions } from 'react-navigation';
 
-import AppNavigator from '../../../AppNavigator';
+import applyNavActionToState from './helpers/applyNavActionToState';
 
 function navigateToHome({ state }) {
   const action = NavigationActions.reset({
@@ -8,10 +8,7 @@ function navigateToHome({ state }) {
     actions: [NavigationActions.navigate({ routeName: 'Home' })]
   });
 
-  const actualState = state.get('navigation.nav');
-  const nextState = AppNavigator.router.getStateForAction(action, actualState);
-
-  state.set('navigation.nav', nextState);
+  applyNavActionToState(state, action);
 }
 
 export default navigateToHome;
