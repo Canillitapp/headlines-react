@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'cerebral/react';
+import { Container } from '@cerebral/react';
 import controller, { load } from './config/controller';
 import { bootstrap } from './config/bootstrap';
 import App from './App';
