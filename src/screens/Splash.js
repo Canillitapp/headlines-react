@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'cerebral/react';
+import { connect } from '@cerebral/react';
 import { state } from 'cerebral/tags';
 import { StyleSheet, Image, View, Dimensions } from 'react-native';
 import { RkText, RkTheme } from 'react-native-ui-kitten';

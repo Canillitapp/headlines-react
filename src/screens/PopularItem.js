@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'cerebral/react';
+import { connect } from '@cerebral/react';
 import { state, props } from 'cerebral/tags';
 
 import NewsItem from '../components/NewsItem';
