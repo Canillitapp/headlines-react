@@ -28,7 +28,7 @@
   "dependencies": {
     "@cerebral/http": "2.0.1",
     "@cerebral/react": "^1.0.0",
-    "cerebral": "2.2.2",
+    "cerebral": "3.0.0",
     "moment": "2.18.1",
     "normalizr": "3.2.3",
     "react": "16.0.0-alpha.12",
