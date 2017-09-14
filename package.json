@@ -40,7 +40,7 @@
   "devDependencies": {
     "babel-eslint": "8.0.0",
     "babel-jest": "21.0.2",
-    "babel-preset-react-native": "3.0.2",
+    "babel-preset-react-native": "4.0.0",
     "eslint": "4.6.1",
     "eslint-config-google": "0.9.1",
     "eslint-config-prettier": "2.4.0",
