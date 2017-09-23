@@ -28,7 +28,7 @@
   "dependencies": {
     "@cerebral/http": "3.0.1",
     "@cerebral/react": "2.1.0",
-    "cerebral": "3.0.1",
+    "cerebral": "3.1.0",
     "moment": "2.18.1",
     "normalizr": "3.2.3",
     "react": "16.0.0-alpha.12",
@@ -41,7 +41,7 @@
     "babel-eslint": "8.0.0",
     "babel-jest": "21.0.2",
     "babel-preset-react-native": "4.0.0",
-    "eslint": "4.7.1",
+    "eslint": "4.7.2",
     "eslint-config-google": "0.9.1",
     "eslint-config-prettier": "2.5.0",
     "eslint-plugin-prettier": "2.3.0",
