@@ -1,7 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Image, View } from 'react-native';
 import { RkCard, RkText, RkStyleSheet } from 'react-native-ui-kitten';
-import moment from 'moment';
+import parse from 'date-fns/parse';
+import format from 'date-fns/format';
+import formatRelative from 'date-fns/formatRelative';
 
 export default function CardItem({
   onPress,
@@ -13,8 +15,8 @@ export default function CardItem({
   newsSource,
   newsDate
 }) {
-  const parsedTopicDate = moment(date, 'YYYY-MM-DD');
-  const parsedNewsDate = moment(newsDate, 'X');
+  const parsedTopicDate = parse(date, 'YYYY-MM-DD');
+  const parsedNewsDate = parse(newsDate, 'X');
   return (
     <TouchableOpacity
       delayPressIn={70}
@@ -26,14 +28,7 @@ export default function CardItem({
         <View rkCardImgOverlay rkCardContent style={styles.overlay}>
           <RkText rkType="header4 inverseColor">{topic}</RkText>
           <RkText style={styles.time} rkType="secondary2 inverseColor">
-            {parsedTopicDate.calendar(null, {
-              sameDay: '[Today]',
-              nextDay: '[Tomorrow]',
-              nextWeek: 'dddd',
-              lastDay: '[Yesterday]',
-              lastWeek: '[Last] dddd',
-              sameElse: 'L'
-            })}
+            {formatRelative(parsedTopicDate, new Date())}
           </RkText>
         </View>
         <View rkCardContent>
@@ -48,14 +43,24 @@ export default function CardItem({
             <RkText rkType="header6">{newsSource}</RkText>
           </View>
           <RkText rkType="secondary2 hintColor">
-            {parsedNewsDate.format('LT')}
+            {format(parsedNewsDate, 'LT')}
           </RkText>
         </View>
       </RkCard>
     </TouchableOpacity>
   );
 }
-
+// instead of formatRelative we had
+/*
+parsedTopicDate.calendar(null, {
+              sameDay: '[Today]',
+              nextDay: '[Tomorrow]',
+              nextWeek: 'dddd',
+              lastDay: '[Yesterday]',
+              lastWeek: '[Last] dddd',
+              sameElse: 'L'
+            })
+*/
 let styles = RkStyleSheet.create(theme => ({
   card: {
     marginVertical: 8
