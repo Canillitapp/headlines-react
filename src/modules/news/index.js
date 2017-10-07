@@ -1,4 +1,4 @@
-import moment from 'moment';
+import startOfDay from 'date-fns/startOfDay';
 
 import signals from './signals';
 
@@ -9,7 +9,7 @@ export default {
       news: {}
     },
 
-    nextTrendingDate: moment().format('YYYY-MM-DD'),
+    nextTrendingDate: startOfDay(new Date()),
     trendingTopics: [],
 
     popularLoaded: false,

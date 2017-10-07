@@ -1,7 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, Image, View } from 'react-native';
 import { RkCard, RkText, RkStyleSheet } from 'react-native-ui-kitten';
-import moment from 'moment';
+import parse from 'date-fns/parse';
+import format from 'date-fns/format';
 
 export default function NewsItem({
   onPress,
@@ -11,7 +12,7 @@ export default function NewsItem({
   sourceName,
   date
 }) {
-  const parsedNewsDate = moment(date, 'X');
+  const parsedNewsDate = parse(date, 'X');
   return (
     <TouchableOpacity
       delayPressIn={70}
@@ -26,7 +27,7 @@ export default function NewsItem({
             {sourceName}
           </RkText>
           <RkText rkType="secondary6 hintColor">
-            {parsedNewsDate.format('LT')}
+            {format(parsedNewsDate, 'LT')}
           </RkText>
           <RkText style={styles.post} numberOfLines={2} rkType="secondary1">
             {title}
