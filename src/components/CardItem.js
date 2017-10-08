@@ -15,8 +15,7 @@ export default function CardItem({
   newsSource,
   newsDate
 }) {
-  const parsedTopicDate = parse(date, 'YYYY-MM-DD');
-  const parsedNewsDate = parse(newsDate, 'X');
+  const parsedTopicDate = parse(date, 'YYYY-MM-DD', new Date());
   return (
     <TouchableOpacity
       delayPressIn={70}
@@ -43,7 +42,7 @@ export default function CardItem({
             <RkText rkType="header6">{newsSource}</RkText>
           </View>
           <RkText rkType="secondary2 hintColor">
-            {format(parsedNewsDate, 'LT')}
+            {format(newsDate, 'LT')}
           </RkText>
         </View>
       </RkCard>
