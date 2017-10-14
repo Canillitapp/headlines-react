@@ -1,13 +1,18 @@
 import { Controller } from 'cerebral';
-import Devtools from 'cerebral/devtools';
 import HttpProvider from '@cerebral/http';
 
 import modules from '../modules';
 
+const Devtools = ['production', 'test'].includes(process.env.NODE_ENV)
+  ? null
+  : require('cerebral/devtools').default;
+
 const controller = Controller({
-  devtools: Devtools({
-    host: '192.168.1.107:8585'
-  }),
+  devtools:
+    Devtools &&
+    Devtools({
+      host: '192.168.1.107:8585'
+    }),
   state: {
     title: 'Hello world'
   },

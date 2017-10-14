@@ -40,9 +40,15 @@ jobs:
           key: build-npm-{{ checksum "package.json" }}
       - restore_cache:
           key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
+      - restore_cache:
+          key: gradle-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
       - run:
           name: Building
           command: cd android && ./gradlew assembleRelease
+      - save_cache:
+          paths:
+            - android/.gradle
+          key: gradle-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
       - save_cache:
           paths:
             - ~/.gradle
