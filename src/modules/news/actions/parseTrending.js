@@ -1,5 +1,7 @@
+import format from 'date-fns/format';
+
 export default function parseTrending({ props, state }) {
-  const date = state.get('news.nextTrendingDate');
+  const date = format(state.get('news.nextTrendingDate'), 'YYYY-MM-DD');
   const { result } = props;
   const output = {
     topics: {},

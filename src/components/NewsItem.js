@@ -12,7 +12,7 @@ export default function NewsItem({
   sourceName,
   date
 }) {
-  const parsedNewsDate = parse(date, 'X');
+  const parsedNewsDate = parse(date, 'X', new Date());
   return (
     <TouchableOpacity
       delayPressIn={70}

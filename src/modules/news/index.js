@@ -1,4 +1,5 @@
 import startOfDay from 'date-fns/startOfDay';
+import format from 'date-fns/format';
 
 import signals from './signals';
 
@@ -9,7 +10,7 @@ export default {
       news: {}
     },
 
-    nextTrendingDate: startOfDay(new Date()),
+    nextTrendingDate: Number(format(startOfDay(new Date()), 'x')),
     trendingTopics: [],
 
     popularLoaded: false,
