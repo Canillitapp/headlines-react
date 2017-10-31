@@ -26,9 +26,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@cerebral/http": "3.3.0",
-    "@cerebral/react": "2.3.0",
-    "cerebral": "3.3.0",
+    "@cerebral/http": "3.4.0",
+    "@cerebral/react": "2.4.0",
+    "cerebral": "3.4.0",
     "date-fns": "^2.0.0-alpha.7",
     "normalizr": "3.2.4",
     "react": "16.0.0",
@@ -41,7 +41,7 @@
     "babel-eslint": "8.0.1",
     "babel-jest": "21.2.0",
     "babel-preset-react-native": "4.0.0",
-    "eslint": "4.9.0",
+    "eslint": "4.10.0",
     "eslint-config-google": "0.9.1",
     "eslint-config-prettier": "2.6.0",
     "eslint-plugin-prettier": "2.3.1",
