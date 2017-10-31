@@ -30,7 +30,6 @@
     "@cerebral/react": "2.4.0",
     "cerebral": "3.4.0",
     "date-fns": "^2.0.0-alpha.7",
-    "normalizr": "3.2.4",
     "react": "16.0.0",
     "react-native": "0.49.5",
     "react-native-ui-kitten": "2.0.1",
