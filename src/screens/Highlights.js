@@ -12,7 +12,7 @@ export default connect(
   Highlights
 );
 
-function Highlights({ trendingTopicsKeys }) {
+function Highlights({ trendingTopicsKeys, refresh }) {
   return <CardList data={trendingTopicsKeys} renderItem={renderItem} />;
 }
 

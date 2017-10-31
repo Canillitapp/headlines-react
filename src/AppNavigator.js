@@ -6,6 +6,7 @@ import News from './components/News';
 import SplashScreen from './screens/Splash';
 import Highlights from './screens/Highlights';
 import Popular from './screens/Popular';
+import Latest from './screens/Latest';
 
 const iconTrending = () => <Icon name="newspaper-o" color="#fff" size={20} />;
 const iconPopular = () => <Icon name="line-chart" color="#fff" size={20} />;
@@ -33,7 +34,7 @@ const RootTabs = TabNavigator(
       }
     },
     LatestTab: {
-      screen: Highlights,
+      screen: Latest,
       path: '/latest',
       navigationOptions: {
         title: 'Latest',
@@ -53,7 +54,7 @@ const RootTabs = TabNavigator(
   },
   {
     tabBarOptions: {
-      showIcon: true
+      showIcon: false
     }
   }
 );

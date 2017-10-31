@@ -1,7 +1,8 @@
-import loadPopular from './loadPopular';
+import loadNews from './loadNews';
 import loadTrending from './loadTrending';
 
 export default {
-  loadPopular,
-  loadTrending
+  loadTrending,
+  loadPopular: loadNews('popular'),
+  loadLatest: loadNews('latest')
 };

@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from '@cerebral/react';
 import { state } from 'cerebral/tags';
-import PopularItem from './PopularItem';
+import LatestItem from './LatestItem';
 
 import NewsList from '../components/NewsList';
 import Loading from '../components/Loading';
 
 export default connect(
   {
-    news: state`news.popular.keys`,
-    loading: state`news.popular.loading`,
-    loaded: state`news.popular.loaded`
+    news: state`news.latest.keys`,
+    loading: state`news.latest.loading`,
+    loaded: state`news.latest.loaded`
   },
-  Popular
+  Latest
 );
 
-function Popular({ news, loading, loaded }) {
+function Latest({ news, loading, loaded }) {
   if (loading && !loaded) {
     return <Loading />;
   }
@@ -26,5 +26,5 @@ function Popular({ news, loading, loaded }) {
 }
 
 function renderItem({ item }) {
-  return <PopularItem key={item} uid={item} />;
+  return <LatestItem key={item} uid={item} />;
 }

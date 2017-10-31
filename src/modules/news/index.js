@@ -13,9 +13,16 @@ export default {
     nextTrendingDate: Number(format(startOfDay(new Date()), 'x')),
     trendingTopics: [],
 
-    popularLoaded: false,
-    popularLoading: false,
-    popular: []
+    popular: {
+      loaded: false,
+      loading: false,
+      keys: []
+    },
+    latest: {
+      loaded: false,
+      loading: false,
+      keys: []
+    }
   },
   signals
 };
