@@ -35,7 +35,7 @@
     "react-native": "0.49.3",
     "react-native-ui-kitten": "2.0.1",
     "react-native-vector-icons": "4.4.2",
-    "react-navigation": "1.0.0-beta.13"
+    "react-navigation": "1.0.0-beta.16"
   },
   "devDependencies": {
     "babel-eslint": "8.0.1",
