@@ -28,7 +28,7 @@
   "dependencies": {
     "@cerebral/http": "3.4.0",
     "@cerebral/react": "2.4.0",
-    "cerebral": "3.4.0",
+    "cerebral": "3.5.0",
     "date-fns": "^2.0.0-alpha.7",
     "react": "16.0.0",
     "react-native": "0.49.5",
