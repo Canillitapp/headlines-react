@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@cerebral/http": "3.4.0",
-    "@cerebral/react": "2.4.0",
+    "@cerebral/react": "2.5.0",
     "cerebral": "3.4.0",
     "date-fns": "^2.0.0-alpha.7",
     "react": "16.0.0",
