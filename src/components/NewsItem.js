@@ -1,23 +1,28 @@
 import React from 'react';
-import { TouchableOpacity, Image, View } from 'react-native';
+import { TouchableOpacity, Image, View, Linking } from 'react-native';
 import { RkCard, RkText, RkStyleSheet } from 'react-native-ui-kitten';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 
+const onPress = url => {
+  Linking.openURL(url);
+};
+
 export default function NewsItem({
-  onPress,
   uid,
   imgUrl,
   title,
   sourceName,
-  date
+  date,
+  url
 }) {
   const parsedNewsDate = parse(date, 'X', new Date());
+
   return (
     <TouchableOpacity
       delayPressIn={70}
       activeOpacity={0.8}
-      onPress={() => onPress(uid)}
+      onPress={() => onPress(url)}
     >
       <RkCard rkType="horizontal" style={styles.card}>
         <Image rkCardImg source={{ uri: imgUrl }} />

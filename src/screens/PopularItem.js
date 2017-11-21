@@ -12,13 +12,14 @@ export default connect(
 );
 
 function PopularItem({ uid, news }) {
-  const { title, img_url: imgUrl, source_name: sourceName, date } = news;
+  const { title, img_url: imgUrl, source_name: sourceName, date, url } = news;
   return (
     <NewsItem
       uid={uid}
       title={title}
       date={date}
       imgUrl={imgUrl}
+      url={url}
       sourceName={sourceName}
     />
   );

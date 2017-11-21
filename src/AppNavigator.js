@@ -13,10 +13,36 @@ const iconPopular = () => <Icon name="line-chart" color="#fff" size={20} />;
 const iconLatest = () => <Icon name="history" color="#fff" size={20} />;
 const iconReactions = () => <Icon name="heart-o" color="#fff" size={20} />;
 
+const TrendingStack = StackNavigator(
+  {
+    TrendingList: {
+      screen: Highlights,
+      path: '/trending',
+      navigationOptions: {
+        title: 'Trending',
+        tabBarLabel: 'Destacados',
+        tabBarIcon: iconTrending
+      }
+    },
+    Search: {
+      screen: News,
+      path: '/trending/:trendingId',
+      navigationOptions: ({ navigation }) => {
+        return {
+          title: `Search ${navigation.state.params.trendingId}!`
+        };
+      }
+    }
+  },
+  {
+    initialRouteName: 'TrendingList'
+  }
+);
+
 const RootTabs = TabNavigator(
   {
     TrendingTab: {
-      screen: Highlights,
+      screen: TrendingStack,
       path: '/',
       navigationOptions: {
         title: 'Trending',
