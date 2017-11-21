@@ -22,6 +22,19 @@ export default {
       loaded: false,
       loading: false,
       keys: []
+    },
+    search: {
+      loaded: false,
+      loading: false,
+      keys: [],
+      last: ''
+    },
+
+    searchForm: {
+      query: {
+        value: '',
+        isRequired: true
+      }
     }
   },
   signals

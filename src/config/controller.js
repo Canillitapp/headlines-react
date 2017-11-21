@@ -1,5 +1,6 @@
 import { Controller } from 'cerebral';
 import HttpProvider from '@cerebral/http';
+import FormsProvider from '@cerebral/forms';
 
 import modules from '../modules';
 
@@ -21,7 +22,8 @@ const controller = Controller({
     HttpProvider({
       baseUrl: 'http://api.canillitapp.com',
       withCredentials: false
-    })
+    }),
+    FormsProvider()
   ]
 });
 
