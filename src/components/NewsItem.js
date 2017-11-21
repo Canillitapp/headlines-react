@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image, View, Linking } from 'react-native';
-import { RkCard, RkText, RkStyleSheet } from 'react-native-ui-kitten';
+import { TouchableOpacity, Image, View, Linking, Text } from 'react-native';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 
@@ -24,30 +23,12 @@ export default function NewsItem({
       activeOpacity={0.8}
       onPress={() => onPress(url)}
     >
-      <RkCard rkType="horizontal" style={styles.card}>
-        <Image rkCardImg source={{ uri: imgUrl }} />
-
-        <View rkCardContent>
-          <RkText numberOfLines={1} rkType="header6">
-            {sourceName}
-          </RkText>
-          <RkText rkType="secondary6 hintColor">
-            {format(parsedNewsDate, 'LT')}
-          </RkText>
-          <RkText style={styles.post} numberOfLines={2} rkType="secondary1">
-            {title}
-          </RkText>
-        </View>
-      </RkCard>
+      <Image source={{ uri: imgUrl }} />
+      <View>
+        <Text numberOfLines={1}>{sourceName}</Text>
+        <Text>{format(parsedNewsDate, 'LT')}</Text>
+        <Text numberOfLines={2}>{title}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
-
-let styles = RkStyleSheet.create(theme => ({
-  card: {
-    marginVertical: 8
-  },
-  post: {
-    marginTop: 13
-  }
-}));

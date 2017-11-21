@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from '@cerebral/react';
 import { state } from 'cerebral/tags';
-import { StyleSheet, Image, View, Dimensions } from 'react-native';
-import { RkText, RkTheme } from 'react-native-ui-kitten';
+import { StyleSheet, Image, View, Dimensions, Text } from 'react-native';
 
 import ProgressBar from '../components/ProgressBar';
-import { KittenTheme } from '../config/theme';
 import { scale, scaleVertical } from '../utils/scale';
 
 export default connect(
@@ -25,16 +23,11 @@ function SplashScreen({ loadProgress }) {
           source={require('../assets/canillita_2.jpeg')}
         />
         <View style={styles.text}>
-          <RkText rkType="light" style={styles.hero}>
-            React Native
-          </RkText>
-          <RkText rkType="logo" style={styles.appName}>
-            Canillitapp
-          </RkText>
+          <Text style={styles.hero}>React Native</Text>
+          <Text style={styles.appName}>Canillitapp</Text>
         </View>
       </View>
       <ProgressBar
-        color={RkTheme.current.colors.accent}
         style={styles.progress}
         progress={loadProgress}
         width={scale(320)}
@@ -45,7 +38,6 @@ function SplashScreen({ loadProgress }) {
 
 let styles = StyleSheet.create({
   container: {
-    backgroundColor: KittenTheme.colors.screen.base,
     justifyContent: 'space-between',
     flex: 1
   },

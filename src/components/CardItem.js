@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image, View } from 'react-native';
-import { RkCard, RkText, RkStyleSheet } from 'react-native-ui-kitten';
+import { TouchableOpacity, Image, View, Text } from 'react-native';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 import formatRelative from 'date-fns/formatRelative';
@@ -22,30 +21,22 @@ export default function CardItem({
       activeOpacity={0.8}
       onPress={() => onPress(uid)}
     >
-      <RkCard rkType="imgBlock" style={styles.card}>
-        <Image rkCardImg source={{ uri: newsImgUrl }} />
-        <View rkCardImgOverlay rkCardContent style={styles.overlay}>
-          <RkText rkType="header4 inverseColor">{topic}</RkText>
-          <RkText style={styles.time} rkType="secondary2 inverseColor">
-            {formatRelative(parsedTopicDate, new Date())}
-          </RkText>
+      <Image source={{ uri: newsImgUrl }} />
+      <View>
+        <Text>{topic}</Text>
+        <Text>{formatRelative(parsedTopicDate, new Date())}</Text>
+      </View>
+      <View>
+        <View>
+          <Text numberOfLines={2}>{newsTitle}</Text>
         </View>
-        <View rkCardContent>
-          <View>
-            <RkText rkType="primary3 mediumLine" numberOfLines={2}>
-              {newsTitle}
-            </RkText>
-          </View>
+      </View>
+      <View>
+        <View>
+          <Text>{newsSource}</Text>
         </View>
-        <View rkCardFooter>
-          <View style={styles.userInfo}>
-            <RkText rkType="header6">{newsSource}</RkText>
-          </View>
-          <RkText rkType="secondary2 hintColor">
-            {format(newsDate, 'LT')}
-          </RkText>
-        </View>
-      </RkCard>
+        <Text>{format(newsDate, 'LT')}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
@@ -60,15 +51,3 @@ parsedTopicDate.calendar(null, {
               sameElse: 'L'
             })
 */
-let styles = RkStyleSheet.create(theme => ({
-  card: {
-    marginVertical: 8
-  },
-  time: {
-    marginTop: 5
-  },
-  userInfo: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  }
-}));

@@ -1,10 +1,6 @@
 import React from 'react';
-import { RkText } from 'react-native-ui-kitten';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Loading() {
-  return (
-    <RkText numberOfLines={1} rkType="header6">
-      Loading...
-    </RkText>
-  );
+  return <Icon name="spinner" />;
 }
