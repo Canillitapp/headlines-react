@@ -1,8 +1,18 @@
 import React from 'react';
-import { TouchableOpacity, Image, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 import formatRelative from 'date-fns/formatRelative';
+
+import {
+  CardContainer,
+  CardImage,
+  CardImageText,
+  CardNewsCount,
+  CardDescription,
+  CardDescSource,
+  CardDescDate
+} from './styled';
 
 export default function CardItem({
   onPress,
@@ -16,28 +26,28 @@ export default function CardItem({
 }) {
   const parsedTopicDate = parse(date, 'YYYY-MM-DD', new Date());
   return (
-    <TouchableOpacity
+    <CardContainer
       delayPressIn={70}
       activeOpacity={0.8}
       onPress={() => onPress(uid)}
     >
-      <Image source={{ uri: newsImgUrl }} />
-      <View>
-        <Text>{topic}</Text>
-        <Text>{formatRelative(parsedTopicDate, new Date())}</Text>
-      </View>
-      <View>
+      <CardImage source={{ uri: newsImgUrl }}>
+        <CardNewsCount>9 noticias</CardNewsCount>
         <View>
-          <Text numberOfLines={2}>{newsTitle}</Text>
+          <CardImageText topic={true}>{topic}</CardImageText>
+          <CardImageText>
+            {formatRelative(parsedTopicDate, new Date())}
+          </CardImageText>
         </View>
-      </View>
-      <View>
-        <View>
-          <Text>{newsSource}</Text>
-        </View>
-        <Text>{format(newsDate, 'LT')}</Text>
-      </View>
-    </TouchableOpacity>
+      </CardImage>
+      <CardDescription>
+        <Text numberOfLines={2}>{newsTitle}</Text>
+        <Text>
+          <CardDescSource>{newsSource} </CardDescSource>
+          <CardDescDate> {format(newsDate, 'LT')}</CardDescDate>
+        </Text>
+      </CardDescription>
+    </CardContainer>
   );
 }
 // instead of formatRelative we had

@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import News from './components/News';
 import SplashScreen from './screens/Splash';
 import Highlights from './screens/Highlights';
+import HighlightsNews from './screens/HighlightsNews';
 import Popular from './screens/Popular';
 import Latest from './screens/Latest';
 
@@ -24,12 +25,12 @@ const TrendingStack = StackNavigator(
         tabBarIcon: iconTrending
       }
     },
-    Search: {
-      screen: News,
-      path: '/trending/:trendingId',
+    TrendingNews: {
+      screen: HighlightsNews,
+      path: '/trending/:uid',
       navigationOptions: ({ navigation }) => {
         return {
-          title: `Search ${navigation.state.params.trendingId}!`
+          title: `Trending ${navigation.state.params.uid}!`
         };
       }
     }

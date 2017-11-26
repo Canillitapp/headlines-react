@@ -1,7 +1,15 @@
 import React from 'react';
-import { TouchableOpacity, Image, View, Linking, Text } from 'react-native';
+import { Linking, Text } from 'react-native';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
+
+import {
+  NewsContainer,
+  NewsImage,
+  NewsDescription,
+  CardDescSource,
+  CardDescDate
+} from './styled';
 
 const onPress = url => {
   Linking.openURL(url);
@@ -18,17 +26,17 @@ export default function NewsItem({
   const parsedNewsDate = parse(date, 'X', new Date());
 
   return (
-    <TouchableOpacity
+    <NewsContainer
       delayPressIn={70}
       activeOpacity={0.8}
       onPress={() => onPress(url)}
     >
-      <Image source={{ uri: imgUrl }} />
-      <View>
-        <Text numberOfLines={1}>{sourceName}</Text>
-        <Text>{format(parsedNewsDate, 'LT')}</Text>
-        <Text numberOfLines={2}>{title}</Text>
-      </View>
-    </TouchableOpacity>
+      <NewsImage source={{ uri: imgUrl }} />
+      <NewsDescription>
+        <Text>{title}</Text>
+        <CardDescDate>{format(parsedNewsDate, 'LT')}</CardDescDate>
+        <CardDescSource>{sourceName}</CardDescSource>
+      </NewsDescription>
+    </NewsContainer>
   );
 }

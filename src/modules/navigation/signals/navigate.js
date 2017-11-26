@@ -10,6 +10,7 @@ export default [
   {
     TrendingTab: [...newsSignals.loadTrending],
     PopularTab: [...newsSignals.loadPopular],
-    LatestTab: [...newsSignals.loadLatest]
+    LatestTab: [...newsSignals.loadLatest],
+    otherwise: []
   }
 ];
