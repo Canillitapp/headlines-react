@@ -31,7 +31,7 @@
     "@cerebral/react": "2.6.0",
     "cerebral": "3.6.0",
     "date-fns": "^2.0.0-alpha.7",
-    "react": "16.1.1",
+    "react": "16.2.0",
     "react-native": "0.50.4",
     "react-native-vector-icons": "4.4.2",
     "react-navigation": "1.0.0-beta.21",
