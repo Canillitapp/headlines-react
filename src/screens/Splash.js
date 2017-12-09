@@ -3,8 +3,8 @@ import { connect } from '@cerebral/react';
 import { state } from 'cerebral/tags';
 import { StyleSheet, Image, View, Dimensions, Text } from 'react-native';
 
-import ProgressBar from '../components/ProgressBar';
-import { scale, scaleVertical } from '../utils/scale';
+import ProgressBar from 'components/ProgressBar';
+import { scale, scaleVertical } from 'utils/scale';
 
 export default connect(
   {
@@ -56,7 +56,6 @@ let styles = StyleSheet.create({
   },
   progress: {
     alignSelf: 'center',
-    marginBottom: 35,
-    backgroundColor: '#e5e5e5'
+    marginBottom: 35
   }
 });

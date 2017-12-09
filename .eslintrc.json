@@ -7,19 +7,20 @@
   ],
   "extends": [
     "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "google",
     "plugin:react/recommended",
     "plugin:react-native/all",
     "prettier",
     "prettier/react"
   ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true
-      }
-    ],
     "new-cap": [
       "error",
       {
@@ -27,8 +28,7 @@
       }
     ],
     "require-jsdoc": "off",
-    "react/prop-types": "off",
-    "react-native/no-color-literals": "off"
+    "react/prop-types": "off"
   },
   "env": {
     "es6": true,

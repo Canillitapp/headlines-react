@@ -11,6 +11,7 @@ export const CardImage = styled.ImageBackground`
   width: 100%;
   height: 150px;
   justify-content: space-between;
+  resize-mode: cover;
 `;
 
 export const CardImageText = styled.Text`
@@ -52,6 +53,7 @@ export const NewsImage = styled.Image`
   margin: 5px;
   border-radius: 10px;
   flex: 0 0 100px;
+  resize-mode: cover;
 `;
 
 export const NewsDescription = styled.View`

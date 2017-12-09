@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from '@cerebral/react';
 import { state, signal } from 'cerebral/tags';
 
-import topicByUidCompute from '../compute/topicByUid';
-import firstNewsByTopicCompute from '../compute/firstNewsByTopic';
+import topicByUidCompute from 'compute/topicByUid';
+import firstNewsByTopicCompute from 'compute/firstNewsByTopic';
 
-import CardList from '../components/CardList';
-import CardItem from '../components/CardItem';
+import CardList from 'components/CardList';
+import CardItem from 'components/CardItem';
 
 export default connect(
   {

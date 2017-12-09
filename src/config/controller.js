@@ -1,6 +1,7 @@
 import { Controller } from 'cerebral';
 import HttpProvider from '@cerebral/http';
 import FormsProvider from '@cerebral/forms';
+import Config from 'react-native-config';
 
 import modules from '../modules';
 
@@ -20,7 +21,7 @@ const controller = Controller({
   modules,
   providers: [
     HttpProvider({
-      baseUrl: 'http://api.canillitapp.com',
+      baseUrl: Config.API_URL,
       withCredentials: false
     }),
     FormsProvider()

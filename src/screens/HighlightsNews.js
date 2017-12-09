@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from '@cerebral/react';
 import { state, props } from 'cerebral/tags';
 
-import NewsList from '../components/NewsList';
-import NewsItem from '../components/NewsItem';
+import NewsList from 'components/NewsList';
+import NewsItem from 'components/NewsItem';
 
 export default connect(
   {
