@@ -56,6 +56,12 @@ jobs:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "android/build.gradle" }}-{{ checksum  "android/app/build.gradle" }}
+      - deploy:
+          name: Deploy
+          command: |
+            if [[ "${CIRCLE_TAG}" =~ ^v[0-9]+(\.[0-9]+)*$ ]]; then
+              ./scripts/deploy.sh
+            fi
       - store_artifacts:
           path: android/app/build/outputs/apk
           destination: APKs

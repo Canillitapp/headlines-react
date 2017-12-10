@@ -41,7 +41,7 @@ export default function CardItem({
         </View>
       </CardImage>
       <CardDescription>
-        <CardDescText numberOfLines={2}>{newsTitle}</CardDescText>
+        <CardDescText>{newsTitle}</CardDescText>
         <CardDescText>
           <CardDescSource>{newsSource} </CardDescSource>
           <CardDescDate> {format(newsDate, 'LT')}</CardDescDate>

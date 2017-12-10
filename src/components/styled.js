@@ -8,7 +8,9 @@ export const CardContainer = styled.TouchableOpacity`
   overflow: hidden;
 `;
 
-export const CardImage = styled.ImageBackground`
+export const CardImage = styled.ImageBackground.attrs({
+  resizeMode: 'cover'
+})`
   width: 100%;
   height: 156px;
   justify-content: space-between;
@@ -38,6 +40,7 @@ export const CardDescription = styled.View`
 
 export const CardDescText = styled.Text`
   color: ${theme.greyshBrown};
+  font-size: 14px;
 `;
 
 export const CardDescSource = styled.Text`
@@ -54,7 +57,9 @@ export const NewsContainer = styled.TouchableOpacity`
   width: 100%;
 `;
 
-export const NewsImage = styled.Image`
+export const NewsImage = styled.Image.attrs({
+  resizeMode: 'cover'
+})`
   width: 100px;
   height: 100px;
   margin: 5px;
