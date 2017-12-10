@@ -79,5 +79,8 @@ workflows:
             branches:
               only:
                 - master
+            tags:
+              only:
+                - /.*/
           requires:
             - test
