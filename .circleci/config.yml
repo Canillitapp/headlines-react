@@ -27,7 +27,6 @@ jobs:
     working_directory: ~/repo
     environment:
       JVM_OPTS: -Xmx3200m
-      KEYSTORE: ${CIRCLE_WORKING_DIRECTORY}/android/app/${CANILLITA_RELEASE_STORE_FILE}
     steps:
       - checkout
       - restore_cache:
