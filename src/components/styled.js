@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import * as theme from 'utils/theme';
 
 export const CardContainer = styled.TouchableOpacity`
   border-radius: 10px;
@@ -9,28 +10,34 @@ export const CardContainer = styled.TouchableOpacity`
 
 export const CardImage = styled.ImageBackground`
   width: 100%;
-  height: 150px;
+  height: 156px;
   justify-content: space-between;
-  resize-mode: cover;
 `;
 
 export const CardImageText = styled.Text`
   align-self: flex-start;
-  font-size: ${props => (props.topic ? '20px' : '14px')};
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  font-size: ${props => (props.topic ? '22px' : '14px')};
+  color: ${theme.white};
+  background-color: ${theme.greyshBrownOpac};
   padding: 3px 6px;
 `;
 
 export const CardNewsCount = styled.Text`
   align-self: flex-end;
-  color: #fff;
-  background-color: #f6002f;
-  padding: 3px 6px;
+  color: ${theme.white};
+  font-size: 14px;
+  background-color: ${theme.waterMelon};
+  border-radius: 13px;
+  padding: 4px 8px;
+  margin: 4px;
 `;
 
 export const CardDescription = styled.View`
   padding: 5px;
+`;
+
+export const CardDescText = styled.Text`
+  color: ${theme.greyshBrown};
 `;
 
 export const CardDescSource = styled.Text`
@@ -51,9 +58,8 @@ export const NewsImage = styled.Image`
   width: 100px;
   height: 100px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 6px;
   flex: 0 0 100px;
-  resize-mode: cover;
 `;
 
 export const NewsDescription = styled.View`

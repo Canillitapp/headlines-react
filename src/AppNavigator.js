@@ -2,51 +2,26 @@ import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import News from './components/News';
-import SplashScreen from './screens/Splash';
+import News from 'components/News';
 import Highlights from './screens/Highlights';
 import HighlightsNews from './screens/HighlightsNews';
 import Popular from './screens/Popular';
 import Latest from './screens/Latest';
 
-const iconTrending = () => <Icon name="newspaper-o" color="#fff" size={20} />;
-const iconPopular = () => <Icon name="line-chart" color="#fff" size={20} />;
-const iconLatest = () => <Icon name="history" color="#fff" size={20} />;
-const iconReactions = () => <Icon name="heart-o" color="#fff" size={20} />;
+import * as theme from 'utils/theme';
 
-const TrendingStack = StackNavigator(
-  {
-    TrendingList: {
-      screen: Highlights,
-      path: '/trending',
-      navigationOptions: {
-        title: 'Trending',
-        tabBarLabel: 'Destacados',
-        tabBarIcon: iconTrending
-      }
-    },
-    TrendingNews: {
-      screen: HighlightsNews,
-      path: '/trending/:uid',
-      navigationOptions: ({ navigation }) => {
-        return {
-          title: `Trending ${navigation.state.params.uid}!`
-        };
-      }
-    }
-  },
-  {
-    initialRouteName: 'TrendingList'
-  }
-);
+const iconTrending = ({ tintColor }) => <Icon name="newspaper-o" color={tintColor} size={20} />;
+const iconPopular = ({ tintColor }) => <Icon name="line-chart" color={tintColor} size={20} />;
+const iconLatest = ({ tintColor }) => <Icon name="history" color={tintColor} size={20} />;
+// const iconReactions = () => <Icon name="heart-o" color="#fff" size={20} />;
 
 const RootTabs = TabNavigator(
   {
     TrendingTab: {
-      screen: TrendingStack,
+      screen: Highlights,
       path: '/',
       navigationOptions: {
-        title: 'Trending',
+        title: 'Destacados',
         tabBarLabel: 'Destacados',
         tabBarIcon: iconTrending
       }
@@ -64,32 +39,52 @@ const RootTabs = TabNavigator(
       screen: Latest,
       path: '/latest',
       navigationOptions: {
-        title: 'Latest',
-        tabBarLabel: 'Reciente',
+        title: 'Recientes',
+        tabBarLabel: 'Recientes',
         tabBarIcon: iconLatest
       }
-    },
-    ReactionsTab: {
-      screen: News,
-      path: '/reactions',
-      navigationOptions: {
-        title: 'Reacciones',
-        tabBarLabel: 'Reacciones',
-        tabBarIcon: iconReactions
-      }
     }
+    // ReactionsTab: {
+    //   screen: News,
+    //   path: '/reactions',
+    //   navigationOptions: {
+    //     title: 'Reacciones',
+    //     tabBarLabel: 'Reacciones',
+    //     tabBarIcon: iconReactions
+    //   }
+    // }
   },
   {
+    initialRouteName: 'TrendingTab',
     tabBarOptions: {
-      showIcon: false
-    }
+      showIcon: true,
+      activeTintColor: theme.waterMelon,
+      inactiveTintColor: theme.warmGrey,
+      style: {
+        backgroundColor: theme.tabsBackground,
+      },
+      indicatorStyle: {
+        backgroundColor: theme.waterMelon
+      },
+      upperCaseLabel: false
+    },
+    tabBarPosition: 'bottom'
   }
 );
 
-const Home = StackNavigator(
+const AppNavigator = StackNavigator(
   {
-    Root: {
+    Home: {
       screen: RootTabs
+    },
+    TrendingNews: {
+      screen: HighlightsNews,
+      path: '/trending/:uid',
+      navigationOptions: ({ navigation }) => {
+        return {
+          title: navigation.state.params.title
+        };
+      }
     },
     Search: {
       screen: News,
@@ -102,22 +97,14 @@ const Home = StackNavigator(
     }
   },
   {
-    initialRouteName: 'Root'
-  }
-);
-
-const AppNavigator = StackNavigator(
-  {
-    Loader: {
-      screen: SplashScreen
-    },
-    Home: {
-      screen: Home
+    initialRouteName: 'Home',
+    headerMode: 'screen',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: theme.headerBackground
+      },
+      headerTintColor: theme.white
     }
-  },
-  {
-    initialRouteName: 'Loader',
-    headerMode: 'none'
   }
 );
 

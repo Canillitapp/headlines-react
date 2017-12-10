@@ -10,6 +10,7 @@ import {
   CardImageText,
   CardNewsCount,
   CardDescription,
+  CardDescText,
   CardDescSource,
   CardDescDate
 } from './styled';
@@ -25,6 +26,7 @@ export default function CardItem({
   newsDate
 }) {
   const parsedTopicDate = parse(date, 'YYYY-MM-DD', new Date());
+  const stringDate = formatRelative(parsedTopicDate, new Date()).split(' ')[0];
   return (
     <CardContainer
       delayPressIn={70}
@@ -34,18 +36,16 @@ export default function CardItem({
       <CardImage source={{ uri: newsImgUrl }}>
         <CardNewsCount>9 noticias</CardNewsCount>
         <View>
+          <CardImageText>{stringDate}</CardImageText>
           <CardImageText topic={true}>{topic}</CardImageText>
-          <CardImageText>
-            {formatRelative(parsedTopicDate, new Date())}
-          </CardImageText>
         </View>
       </CardImage>
       <CardDescription>
-        <Text numberOfLines={2}>{newsTitle}</Text>
-        <Text>
+        <CardDescText numberOfLines={2}>{newsTitle}</CardDescText>
+        <CardDescText>
           <CardDescSource>{newsSource} </CardDescSource>
           <CardDescDate> {format(newsDate, 'LT')}</CardDescDate>
-        </Text>
+        </CardDescText>
       </CardDescription>
     </CardContainer>
   );

@@ -1,11 +1,9 @@
 import navigate from './navigate';
-import navigateToLoader from '../actions/navigateToLoader';
-import navigateToHome from '../actions/navigateToHome';
 import navigateToTrendingNews from '../actions/navigateToTrendingNews';
+import goBack from '../actions/goBack';
 
 export default {
   navigate,
-  navigateToLoader: [navigateToLoader],
-  navigateToHome: [navigateToHome],
-  navigateToTrendingNews: [navigateToTrendingNews]
+  navigateToTrendingNews: [navigateToTrendingNews],
+  goBack: [goBack]
 };

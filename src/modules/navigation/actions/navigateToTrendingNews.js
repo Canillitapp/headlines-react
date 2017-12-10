@@ -6,7 +6,8 @@ function navigateToTrendingNews({ state, props }) {
   const action = NavigationActions.navigate({
     routeName: 'TrendingNews',
     params: {
-      uid: props.uid
+      uid: props.uid,
+      title: props.title,
     }
   });
 

@@ -1,9 +1,11 @@
+import { NavigationActions } from 'react-navigation';
+
 import AppNavigator from '../../AppNavigator';
 
 import signals from './signals';
 
 const initialState = AppNavigator.router.getStateForAction(
-  AppNavigator.router.getActionForPathAndParams('Loader')
+  NavigationActions.init()
 );
 
 export default {

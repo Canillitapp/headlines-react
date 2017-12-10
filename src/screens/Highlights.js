@@ -5,18 +5,25 @@ import { state, signal } from 'cerebral/tags';
 import topicByUidCompute from 'compute/topicByUid';
 import firstNewsByTopicCompute from 'compute/firstNewsByTopic';
 
+import Loading from 'components/Loading'
 import CardList from 'components/CardList';
 import CardItem from 'components/CardItem';
 
 export default connect(
   {
-    trendingTopicsKeys: state`news.trendingTopics`
+    trendingTopicsKeys: state`news.trendingTopics`,
+    loading: state`news.trending.loading`,
+    loaded: state`news.trending.loaded`
   },
   Highlights
 );
 
-function Highlights({ trendingTopicsKeys, refresh }) {
-  return <CardList data={trendingTopicsKeys} renderItem={renderItem} />;
+function Highlights({ trendingTopicsKeys, loading, loaded }) {
+  return (
+    <Loading loading={loading && !loaded}ß>
+      <CardList data={trendingTopicsKeys} renderItem={renderItem} />
+    </Loading>
+  );
 }
 
 function renderItem({ item }) {
@@ -42,7 +49,7 @@ function HighlightItem({ uid, topic, news, show }) {
   } = news;
 
   const onPress = () => {
-    show({ uid });
+    show({ uid, title });
   };
 
   return (

@@ -5,9 +5,11 @@ import Config from 'react-native-config';
 
 import modules from '../modules';
 
-const Devtools = ['production', 'test'].includes(process.env.NODE_ENV)
-  ? null
-  : require('cerebral/devtools').default;
+// const Devtools = ['production', 'test'].includes(process.env.NODE_ENV)
+//   ? null
+//   : require('cerebral/devtools').default;
+
+const Devtools = null;
 
 const controller = Controller({
   devtools:
