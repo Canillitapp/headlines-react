@@ -9,7 +9,8 @@
           "components": "./src/components",
           "compute": "./src/compute",
           "screens": "./src/screens",
-          "utils": "./src/utils"
+          "utils": "./src/utils",
+          "config": "./config"
         },
         "extensions": [".js", ".ios.js", ".android.js"]
       }
