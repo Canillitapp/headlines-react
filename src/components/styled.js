@@ -62,14 +62,18 @@ export const NewsImage = styled.Image.attrs({
 })`
   width: 100px;
   height: 100px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 6px;
   flex: 0 0 100px;
 `;
 
 export const NewsDescription = styled.View`
-  padding: 5px;
+  padding: 10px 5px;
   flex: 1 0 100px;
+`;
+
+export const NewsText = styled.Text`
+  font-size: 14px;
 `;
 
 export const LoadingContainer = styled.View`

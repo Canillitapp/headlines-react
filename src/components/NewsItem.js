@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linking, Text } from 'react-native';
+import { Linking } from 'react-native';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 
@@ -7,6 +7,7 @@ import {
   NewsContainer,
   NewsImage,
   NewsDescription,
+  NewsText,
   CardDescSource,
   CardDescDate
 } from './styled';
@@ -33,7 +34,7 @@ export default function NewsItem({
     >
       <NewsImage source={{ uri: imgUrl }} />
       <NewsDescription>
-        <Text>{title}</Text>
+        <NewsText>{title}</NewsText>
         <CardDescDate>{format(parsedNewsDate, 'LT')}</CardDescDate>
         <CardDescSource>{sourceName}</CardDescSource>
       </NewsDescription>
