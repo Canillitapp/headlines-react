@@ -5,7 +5,7 @@ import { state, signal } from 'cerebral/tags';
 import topicByUidCompute from 'compute/topicByUid';
 import firstNewsByTopicCompute from 'compute/firstNewsByTopic';
 
-import Loading from 'components/Loading'
+import Loading from 'components/Loading';
 import CardList from 'components/CardList';
 import CardItem from 'components/CardItem';
 

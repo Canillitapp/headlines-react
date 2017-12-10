@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 import formatRelative from 'date-fns/formatRelative';
