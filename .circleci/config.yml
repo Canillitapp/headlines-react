@@ -60,7 +60,7 @@ jobs:
           name: Deploy
           command: |
             if [[ "${CIRCLE_TAG}" =~ ^v[0-9]+(\.[0-9]+)*$ ]]; then
-              ./scripts/deploy.sh
+              ./scripts/gplay-deploy.sh
             fi
       - store_artifacts:
           path: android/app/build/outputs/apk
