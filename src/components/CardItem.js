@@ -33,7 +33,7 @@ export default function CardItem({
       activeOpacity={0.8}
       onPress={() => onPress(uid)}
     >
-      <CardImage source={{ uri: newsImgUrl }}>
+      <CardImage defaultSource={require('../assets/image_placeholder_big.png')} source={{ uri: newsImgUrl }}>
         <CardNewsCount>9 noticias</CardNewsCount>
         <View>
           <CardImageText>{stringDate}</CardImageText>

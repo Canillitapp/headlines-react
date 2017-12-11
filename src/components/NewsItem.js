@@ -32,7 +32,7 @@ export default function NewsItem({
       activeOpacity={0.8}
       onPress={() => onPress(url)}
     >
-      <NewsImage source={{ uri: imgUrl }} />
+      <NewsImage source={{ uri: imgUrl }} defaultSource={require('../assets/image_placeholder_big.png')} />
       <NewsDescription>
         <NewsText>{title}</NewsText>
         <CardDescDate>{format(parsedNewsDate, 'LT')}</CardDescDate>
