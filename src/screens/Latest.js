@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from '@cerebral/react';
-import { state, props } from 'cerebral/tags';
+import { state, props, signal } from 'cerebral/tags';
 
 import NewsList from 'components/NewsList';
 import Loading from 'components/Loading';
@@ -10,15 +10,20 @@ export default connect(
   {
     news: state`news.latest.keys`,
     loading: state`news.latest.loading`,
-    loaded: state`news.latest.loaded`
+    loaded: state`news.latest.loaded`,
+    refresh: signal`news.loadLatest`
   },
   Latest
 );
 
-function Latest({ news, loading, loaded }) {
+function Latest({ news, loading, loaded, refresh }) {
+  const onRefresh = () => {
+    refresh({ force: true });
+  };
+
   return (
     <Loading loading={loading && !loaded}>
-      <NewsList data={news} renderItem={renderItem} />
+      <NewsList data={news} renderItem={renderItem} loading={loading} refresh={onRefresh} />
     </Loading>
   );
 }

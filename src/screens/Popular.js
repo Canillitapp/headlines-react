@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from '@cerebral/react';
-import { state, props } from 'cerebral/tags';
+import { state, props, signal } from 'cerebral/tags';
 
 import Loading from 'components/Loading';
 import NewsList from 'components/NewsList';
@@ -10,15 +10,24 @@ export default connect(
   {
     news: state`news.popular.keys`,
     loading: state`news.popular.loading`,
-    loaded: state`news.popular.loaded`
+    loaded: state`news.popular.loaded`,
+    refresh: signal`news.loadPopular`
   },
   Popular
 );
 
-function Popular({ news, loading, loaded }) {
+function Popular({ news, loading, loaded, refresh }) {
+  const onRefresh = () => {
+    refresh({ force: true });
+  };
   return (
     <Loading loading={loading && !loaded}>
-      <NewsList data={news} renderItem={renderItem} />
+      <NewsList
+        data={news}
+        renderItem={renderItem}
+        loading={loading}
+        refresh={onRefresh}
+      />
     </Loading>
   );
 }

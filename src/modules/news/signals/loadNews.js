@@ -22,6 +22,11 @@ export default function loadNewsFactory(category) {
             getNews(category),
             parseNews,
             mergeNews,
+            when(props`force`),
+            {
+              true: [set(state`news.${category}.keys`, [])],
+              false: []
+            },
             pushKeys(category),
             set(state`news.${category}.loaded`, true),
             set(state`news.${category}.loading`, false)

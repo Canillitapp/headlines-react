@@ -13,15 +13,25 @@ export default connect(
   {
     trendingTopicsKeys: state`news.trendingTopics`,
     loading: state`news.trending.loading`,
-    loaded: state`news.trending.loaded`
+    loaded: state`news.trending.loaded`,
+    refresh: signal`news.loadTrending`
   },
   Highlights
 );
 
-function Highlights({ trendingTopicsKeys, loading, loaded }) {
+function Highlights({ trendingTopicsKeys, loading, loaded, refresh }) {
+  const onRefresh = () => {
+    // refresh({ force: true });
+  };
+
   return (
-    <Loading loading={loading && !loaded}ß>
-      <CardList data={trendingTopicsKeys} renderItem={renderItem} />
+    <Loading loading={loading && !loaded} ß>
+      <CardList
+        data={trendingTopicsKeys}
+        renderItem={renderItem}
+        loading={loading}
+        refresh={onRefresh}
+      />
     </Loading>
   );
 }
