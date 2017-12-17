@@ -1,13 +1,38 @@
 import React from 'react';
-import { FlatList, RefreshControl } from 'react-native';
+import { FlatList, RefreshControl, ActivityIndicator } from 'react-native';
 
-export default function CardList({ data, renderItem, loading, onRefresh, onLoadMore }) {
+import { waterMelon } from 'utils/theme';
+import { CardLoadMoreIndicatorContainer } from './styled';
+
+export default function CardList({
+  data,
+  renderItem,
+  loading,
+  loadingMore,
+  onRefresh,
+  onLoadMore
+}) {
+  const renderFooter = () => {
+    if (!loadingMore) return null;
+
+    return (
+      <CardLoadMoreIndicatorContainer>
+        <ActivityIndicator size={50} color={waterMelon} />
+      </CardLoadMoreIndicatorContainer>
+    );
+  };
+
   let refreshControl = null;
   if (onRefresh) {
     refreshControl = (
-      <RefreshControl refreshing={loading} onRefresh={onRefresh} />
+      <RefreshControl
+        refreshing={loading && !loadingMore}
+        onRefresh={onRefresh}
+        colors={[waterMelon]}
+      />
     );
   }
+
   return (
     <FlatList
       data={data}
@@ -17,6 +42,7 @@ export default function CardList({ data, renderItem, loading, onRefresh, onLoadM
       refreshControl={refreshControl}
       onEndReached={onLoadMore}
       onEndReachedThreshold={1}
+      ListFooterComponent={renderFooter}
     />
   );
 }

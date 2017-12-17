@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import * as theme from 'utils/theme';
 
+export const CardLoadMoreIndicatorContainer = styled.View`
+  padding: 10px;
+`;
+
 export const CardContainer = styled.TouchableOpacity`
   border-radius: 10px;
   border: 1px solid #aaa;
@@ -51,8 +55,13 @@ export const CardDescDate = styled.Text`
   color: #aaa;
 `;
 
+export const NewsSeparator = styled.View`
+  height: 1px;
+  width: 100%;
+  background-color: #aaa;
+`;
+
 export const NewsContainer = styled.TouchableOpacity`
-  border: 0.5px solid #aaa;
   flex-direction: row;
   width: 100%;
 `;

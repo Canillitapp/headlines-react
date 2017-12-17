@@ -32,6 +32,11 @@ export default [
             ],
             false: []
           },
+          when(props`more`),
+          {
+            true: [set(state`news.trending.loadingMore`, true)],
+            false: []
+          },
           getTrending,
           parseTrending,
           setNextTrendingDate,
@@ -44,7 +49,8 @@ export default [
           },
           pushTrending,
           set(state`news.trending.loaded`, true),
-          set(state`news.trending.loading`, false)
+          set(state`news.trending.loading`, false),
+          set(state`news.trending.loadingMore`, false)
         ],
         false: []
       }
