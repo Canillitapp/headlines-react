@@ -11,7 +11,7 @@ import CardItem from 'components/CardItem';
 
 export default connect(
   {
-    trendingTopicsKeys: state`news.trendingTopics`,
+    trendingTopicsKeys: state`news.trending.topics`,
     loading: state`news.trending.loading`,
     loaded: state`news.trending.loaded`,
     refresh: signal`news.loadTrending`
@@ -21,7 +21,10 @@ export default connect(
 
 function Highlights({ trendingTopicsKeys, loading, loaded, refresh }) {
   const onRefresh = () => {
-    // refresh({ force: true });
+    refresh({ force: true });
+  };
+  const onLoadMore = () => {
+    refresh({ more: true });
   };
 
   return (
@@ -30,7 +33,8 @@ function Highlights({ trendingTopicsKeys, loading, loaded, refresh }) {
         data={trendingTopicsKeys}
         renderItem={renderItem}
         loading={loading}
-        refresh={onRefresh}
+        onRefresh={onRefresh}
+        onLoadMore={onLoadMore}
       />
     </Loading>
   );

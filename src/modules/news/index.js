@@ -10,9 +10,12 @@ export default {
       news: {}
     },
 
-    nextTrendingDate: Number(format(startOfDay(new Date()), 'x')),
-    trendingTopics: [],
-
+    trending: {
+      loaded: false,
+      loading: false,
+      nextDate: Number(format(startOfDay(new Date()), 'x')),
+      topics: []
+    },
     popular: {
       loaded: false,
       loading: false,
