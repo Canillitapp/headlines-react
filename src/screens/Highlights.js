@@ -13,13 +13,14 @@ export default connect(
   {
     trendingTopicsKeys: state`news.trending.topics`,
     loading: state`news.trending.loading`,
+    loadingMore: state`news.trending.loadingMore`,
     loaded: state`news.trending.loaded`,
     refresh: signal`news.loadTrending`
   },
   Highlights
 );
 
-function Highlights({ trendingTopicsKeys, loading, loaded, refresh }) {
+function Highlights({ trendingTopicsKeys, loading, loadingMore, loaded, refresh }) {
   const onRefresh = () => {
     refresh({ force: true });
   };
@@ -33,6 +34,7 @@ function Highlights({ trendingTopicsKeys, loading, loaded, refresh }) {
         data={trendingTopicsKeys}
         renderItem={renderItem}
         loading={loading}
+        loadingMore={loadingMore}
         onRefresh={onRefresh}
         onLoadMore={onLoadMore}
       />

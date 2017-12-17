@@ -13,6 +13,7 @@ export default {
     trending: {
       loaded: false,
       loading: false,
+      loadingMore: false,
       nextDate: Number(format(startOfDay(new Date()), 'x')),
       topics: []
     },
