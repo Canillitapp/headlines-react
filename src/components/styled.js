@@ -1,6 +1,20 @@
 import styled from 'styled-components/native';
 import * as theme from 'utils/theme';
 
+export const SearchButton = styled.TouchableOpacity`
+  padding: 16px;
+`;
+
+export const SearchInput = styled.TextInput.attrs({
+  placeholder: 'Search',
+  placeholderTextColor: theme.white,
+  underlineColorAndroid: theme.white,
+  selectionColor: theme.waterMelon
+})`
+  width: 100%;
+  color: ${theme.white};
+`;
+
 export const CardLoadMoreIndicatorContainer = styled.View`
   padding: 10px;
 `;

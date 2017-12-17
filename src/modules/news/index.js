@@ -37,6 +37,7 @@ export default {
     searchForm: {
       query: {
         value: '',
+        defaultValue: '',
         isRequired: true
       }
     }

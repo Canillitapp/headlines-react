@@ -2,18 +2,26 @@ import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import News from 'components/News';
+import Search from './screens/Search';
 import Highlights from './screens/Highlights';
 import HighlightsNews from './screens/HighlightsNews';
 import Popular from './screens/Popular';
 import Latest from './screens/Latest';
 
+import { SearchButton } from 'components/styled';
 import * as theme from 'utils/theme';
 
-const iconTrending = ({ tintColor }) => <Icon name="newspaper-o" color={tintColor} size={20} />;
-const iconPopular = ({ tintColor }) => <Icon name="line-chart" color={tintColor} size={20} />;
-const iconLatest = ({ tintColor }) => <Icon name="history" color={tintColor} size={20} />;
+const iconTrending = ({ tintColor }) => (
+  <Icon name="newspaper-o" color={tintColor} size={20} />
+);
+const iconPopular = ({ tintColor }) => (
+  <Icon name="line-chart" color={tintColor} size={20} />
+);
+const iconLatest = ({ tintColor }) => (
+  <Icon name="history" color={tintColor} size={20} />
+);
 // const iconReactions = () => <Icon name="heart-o" color="#fff" size={20} />;
+const iconSearch = <Icon name="search" color={theme.white} size={24} />;
 
 const RootTabs = TabNavigator(
   {
@@ -61,7 +69,7 @@ const RootTabs = TabNavigator(
       activeTintColor: theme.waterMelon,
       inactiveTintColor: theme.warmGrey,
       style: {
-        backgroundColor: theme.tabsBackground,
+        backgroundColor: theme.tabsBackground
       },
       indicatorStyle: {
         backgroundColor: theme.waterMelon
@@ -87,23 +95,29 @@ const AppNavigator = StackNavigator(
       }
     },
     Search: {
-      screen: News,
-      path: '/search/:q',
-      navigationOptions: ({ navigation }) => {
-        return {
-          title: `Search ${navigation.state.params.q}!`
-        };
-      }
+      screen: Search,
+      path: '/search'
     }
   },
   {
     initialRouteName: 'Home',
     headerMode: 'screen',
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: theme.headerBackground
-      },
-      headerTintColor: theme.white
+    navigationOptions: ({ navigation, ...args }) => {
+      return {
+        headerStyle: {
+          backgroundColor: theme.headerBackground
+        },
+        headerTintColor: theme.white,
+        headerRight: (
+          <SearchButton
+            onPress={() => {
+              navigation.navigate('Search');
+            }}
+          >
+            {iconSearch}
+          </SearchButton>
+        )
+      };
     }
   }
 );
