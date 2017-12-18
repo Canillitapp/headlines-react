@@ -1,7 +1,6 @@
 import React from 'react';
 import { Linking } from 'react-native';
-import parse from 'date-fns/parse';
-import format from 'date-fns/format';
+import moment from 'moment/min/moment-with-locales';
 
 import {
   NewsContainer,
@@ -24,7 +23,7 @@ export default function NewsItem({
   date,
   url
 }) {
-  const parsedNewsDate = parse(date, 'X', new Date());
+  const parsedNewsDate = moment.unix(date);
 
   return (
     <NewsContainer
@@ -32,10 +31,13 @@ export default function NewsItem({
       activeOpacity={0.8}
       onPress={() => onPress(url)}
     >
-      <NewsImage source={{ uri: imgUrl }} defaultSource={require('../assets/image_placeholder_big.png')} />
+      <NewsImage
+        source={{ uri: imgUrl }}
+        defaultSource={require('../assets/image_placeholder_big.png')}
+      />
       <NewsDescription>
         <NewsText>{title}</NewsText>
-        <CardDescDate>{format(parsedNewsDate, 'LT')}</CardDescDate>
+        <CardDescDate>{parsedNewsDate.format('LT')}</CardDescDate>
         <CardDescSource>{sourceName}</CardDescSource>
       </NewsDescription>
     </NewsContainer>

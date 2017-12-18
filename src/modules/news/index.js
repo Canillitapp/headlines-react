@@ -1,5 +1,4 @@
-import startOfDay from 'date-fns/startOfDay';
-import format from 'date-fns/format';
+import moment from 'moment/min/moment-with-locales';
 
 import signals from './signals';
 
@@ -14,7 +13,7 @@ export default {
       loaded: false,
       loading: false,
       loadingMore: false,
-      nextDate: Number(format(startOfDay(new Date()), 'x')),
+      nextDate: moment().valueOf(),
       topics: []
     },
     popular: {

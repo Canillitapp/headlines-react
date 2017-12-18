@@ -1,12 +1,13 @@
 import styled from 'styled-components/native';
 import * as theme from 'utils/theme';
+import i18n from 'i18n';
 
 export const SearchButton = styled.TouchableOpacity`
   padding: 16px;
 `;
 
 export const SearchInput = styled.TextInput.attrs({
-  placeholder: 'Search',
+  placeholder: i18n.t('search'),
   placeholderTextColor: theme.white,
   underlineColorAndroid: theme.white,
   selectionColor: theme.waterMelon
