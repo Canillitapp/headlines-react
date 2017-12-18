@@ -1,7 +1,7 @@
 {
   "name": "headlines-react",
   "description": "it's spelled can-e-she-tah",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "private": true,
   "bugs": {
     "url": "https://github.com/Canillitapp/headlines-react/issues"
@@ -70,6 +70,8 @@
     "transformIgnorePatterns": [
       "node_modules/(?!react-native|react-navigation|react-native-vector-icons)"
     ],
-    "setupFiles": ["./__mocks__/RNI18n.js"]
+    "setupFiles": [
+      "./__mocks__/RNI18n.js"
+    ]
   }
 }
