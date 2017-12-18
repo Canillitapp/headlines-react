@@ -69,6 +69,7 @@
     "preset": "react-native",
     "transformIgnorePatterns": [
       "node_modules/(?!react-native|react-navigation|react-native-vector-icons)"
-    ]
+    ],
+    "setupFiles": ["./__mocks__/RNI18n.js"]
   }
 }
