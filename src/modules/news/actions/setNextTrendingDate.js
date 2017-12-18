@@ -1,8 +1,7 @@
-import addDays from 'date-fns/addDays';
-import format from 'date-fns/format';
+import moment from 'moment';
 
 export default function setNextTrendingDate({ state }) {
   const date = state.get('news.trending.nextDate');
-  const newDate = Number(format(addDays(date, -1), 'x'));
+  const newDate = moment(date).add(-1, 'days').valueOf();
   state.set('news.trending.nextDate', newDate);
 }

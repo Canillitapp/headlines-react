@@ -1,8 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import parse from 'date-fns/parse';
-import format from 'date-fns/format';
-import formatRelative from 'date-fns/formatRelative';
+import moment from 'moment';
 
 import {
   CardContainer,
@@ -25,15 +23,26 @@ export default function CardItem({
   newsSource,
   newsDate
 }) {
-  const parsedTopicDate = parse(date, 'YYYY-MM-DD', new Date());
-  const stringDate = formatRelative(parsedTopicDate, new Date()).split(' ')[0];
+  const parsedTopicDate = moment(date, 'YYYY-MM-DD');
+  const stringDate = parsedTopicDate.calendar(null, {
+    sameDay: '[Hoy]',
+    nextDay: '[Mañana]',
+    nextWeek: 'dddd',
+    lastDay: '[Ayer]',
+    lastWeek: 'dddd',
+    sameElse: 'L'
+  });
+
   return (
     <CardContainer
       delayPressIn={70}
       activeOpacity={0.8}
       onPress={() => onPress(uid)}
     >
-      <CardImage defaultSource={require('../assets/image_placeholder_big.png')} source={{ uri: newsImgUrl }}>
+      <CardImage
+        defaultSource={require('../assets/image_placeholder_big.png')}
+        source={{ uri: newsImgUrl }}
+      >
         <CardNewsCount>9 noticias</CardNewsCount>
         <View>
           <CardImageText>{stringDate}</CardImageText>
@@ -44,7 +53,7 @@ export default function CardItem({
         <CardDescText>{newsTitle}</CardDescText>
         <CardDescText>
           <CardDescSource>{newsSource} </CardDescSource>
-          <CardDescDate> {format(newsDate, 'LT')}</CardDescDate>
+          <CardDescDate> {moment.unix(newsDate).format('LT')}</CardDescDate>
         </CardDescText>
       </CardDescription>
     </CardContainer>

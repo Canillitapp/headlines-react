@@ -34,7 +34,7 @@
     "@cerebral/http": "3.6.0",
     "@cerebral/react": "2.6.0",
     "cerebral": "3.6.0",
-    "date-fns": "2.0.0-alpha.7",
+    "moment": "^2.20.0",
     "react": "16.2.0",
     "react-native": "0.51.0",
     "react-native-vector-icons": "4.4.2",

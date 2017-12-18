@@ -1,7 +1,6 @@
 import { merge, when, set } from 'cerebral/operators';
 import { state, props } from 'cerebral/tags';
-import startOfDay from 'date-fns/startOfDay';
-import format from 'date-fns/format';
+import moment from 'moment';
 
 import getTrending from '../actions/getTrending';
 import parseTrending from '../actions/parseTrending';
@@ -27,7 +26,7 @@ export default [
             true: [
               set(
                 state`news.trending.nextDate`,
-                Number(format(startOfDay(new Date()), 'x'))
+                moment().valueOf()
               )
             ],
             false: []
