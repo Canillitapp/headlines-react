@@ -68,3 +68,10 @@
 -dontwarn java.nio.file.*
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 -dontwarn okio.**
+
+#i18n
+
+-dontwarn android.os.LocaleList
+-dontwarn android.content.res.Configuration
+-dontwarn com.facebook.react.bridge.Promise
+-dontwarn com.facebook.react.bridge.ReactApplicationContext
