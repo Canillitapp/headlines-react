@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linking } from 'react-native';
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
 
 import {
   NewsContainer,

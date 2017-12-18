@@ -1,6 +1,6 @@
 import { merge, when, set } from 'cerebral/operators';
 import { state, props } from 'cerebral/tags';
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
 
 import getTrending from '../actions/getTrending';
 import parseTrending from '../actions/parseTrending';

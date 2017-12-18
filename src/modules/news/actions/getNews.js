@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
 
 export default function getNewsFactory(category) {
   return function getNews({ state, http, forms }) {

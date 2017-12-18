@@ -1,6 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
+
+import i18n from 'i18n';
 
 import {
   CardContainer,
@@ -18,6 +20,7 @@ export default function CardItem({
   uid,
   topic,
   date,
+  count,
   newsTitle,
   newsImgUrl,
   newsSource,
@@ -25,10 +28,10 @@ export default function CardItem({
 }) {
   const parsedTopicDate = moment(date, 'YYYY-MM-DD');
   const stringDate = parsedTopicDate.calendar(null, {
-    sameDay: '[Hoy]',
-    nextDay: '[Mañana]',
+    sameDay: `[${i18n.t('today')}]`,
+    nextDay: `[${i18n.t('tomorrow')}]`,
     nextWeek: 'dddd',
-    lastDay: '[Ayer]',
+    lastDay: `[${i18n.t('yesterday')}]`,
     lastWeek: 'dddd',
     sameElse: 'L'
   });
@@ -43,7 +46,7 @@ export default function CardItem({
         defaultSource={require('../assets/image_placeholder_big.png')}
         source={{ uri: newsImgUrl }}
       >
-        <CardNewsCount>9 noticias</CardNewsCount>
+        <CardNewsCount>{count} {i18n.t('news')}</CardNewsCount>
         <View>
           <CardImageText>{stringDate}</CardImageText>
           <CardImageText topic={true}>{topic}</CardImageText>

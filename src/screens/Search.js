@@ -10,11 +10,12 @@ import NewsList from 'components/NewsList';
 import NewsItem from 'components/NewsItem';
 import { SearchButton, SearchInput } from 'components/styled';
 import * as theme from 'utils/theme';
+import i18n from 'i18n';
 
 export default class Search extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Search',
+      title: i18n.t('search'),
       headerTitle: <SearchInputHOC />,
       headerRight: <SearchButtonHOC />
     };

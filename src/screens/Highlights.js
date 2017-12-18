@@ -56,7 +56,7 @@ const HighlightItemHOC = connect(
 );
 
 function HighlightItem({ uid, topic, news, show }) {
-  const { topic: title, date } = topic;
+  const { topic: title, date, news: newsKeys } = topic;
   const {
     title: newsTitle,
     img_url: newsImgUrl,
@@ -73,6 +73,7 @@ function HighlightItem({ uid, topic, news, show }) {
       uid={uid}
       topic={title}
       date={date}
+      count={newsKeys.length}
       newsTitle={newsTitle}
       newsImgUrl={newsImgUrl}
       newsSource={newsSource}
