@@ -3,5 +3,10 @@ export default {
   tomorrow: 'Mañana',
   yesterday: 'Ayer',
   news: 'noticias',
-  search: 'Buscar'
+  search: 'Buscar',
+  noResults: 'Sin resultados.',
+  trendingTitle: 'Trending',
+  popularTitle: 'Popular',
+  latestTitle: 'Recientes',
+  reactionsTitle: 'Reacciones'
 };

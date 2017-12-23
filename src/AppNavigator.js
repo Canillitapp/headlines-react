@@ -10,6 +10,7 @@ import Latest from './screens/Latest';
 
 import { SearchButton } from 'components/styled';
 import * as theme from 'utils/theme';
+import i18n from 'i18n';
 
 const iconTrending = ({ tintColor }) => (
   <Icon name="newspaper-o" color={tintColor} size={20} />
@@ -29,8 +30,8 @@ const RootTabs = TabNavigator(
       screen: Highlights,
       path: '/',
       navigationOptions: {
-        title: 'Destacados',
-        tabBarLabel: 'Destacados',
+        title: i18n.t('trendingTitle'),
+        tabBarLabel: i18n.t('trendingTitle'),
         tabBarIcon: iconTrending
       }
     },
@@ -38,8 +39,8 @@ const RootTabs = TabNavigator(
       screen: Popular,
       path: '/popular',
       navigationOptions: {
-        title: 'Popular',
-        tabBarLabel: 'Popular',
+        title: i18n.t('popularTitle'),
+        tabBarLabel: i18n.t('popularTitle'),
         tabBarIcon: iconPopular
       }
     },
@@ -47,8 +48,8 @@ const RootTabs = TabNavigator(
       screen: Latest,
       path: '/latest',
       navigationOptions: {
-        title: 'Recientes',
-        tabBarLabel: 'Recientes',
+        title: i18n.t('latestTitle'),
+        tabBarLabel: i18n.t('latestTitle'),
         tabBarIcon: iconLatest
       }
     }
@@ -56,8 +57,8 @@ const RootTabs = TabNavigator(
     //   screen: News,
     //   path: '/reactions',
     //   navigationOptions: {
-    //     title: 'Reacciones',
-    //     tabBarLabel: 'Reacciones',
+    //     title: i18n.t('reactionsTitle'),
+    //     tabBarLabel: i18n.t('reactionsTitle'),
     //     tabBarIcon: iconReactions
     //   }
     // }

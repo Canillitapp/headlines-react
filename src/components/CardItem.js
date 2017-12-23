@@ -62,14 +62,3 @@ export default function CardItem({
     </CardContainer>
   );
 }
-// instead of formatRelative we had
-/*
-parsedTopicDate.calendar(null, {
-              sameDay: '[Today]',
-              nextDay: '[Tomorrow]',
-              nextWeek: 'dddd',
-              lastDay: '[Yesterday]',
-              lastWeek: '[Last] dddd',
-              sameElse: 'L'
-            })
-*/
