@@ -30,7 +30,7 @@
     "postversion": "react-native-version"
   },
   "dependencies": {
-    "@cerebral/forms": "3.0.0",
+    "@cerebral/forms": "3.0.1",
     "@cerebral/http": "4.0.0",
     "@cerebral/react": "3.0.0",
     "cerebral": "4.0.0",
