@@ -1,9 +1,9 @@
-import { compute } from 'cerebral';
+import { Compute } from 'cerebral';
 import { state } from 'cerebral/tags';
 
 import topicByUid from './topicByUid';
 
-export default compute(topicByUid, function firstNewsByTopic(topic, get) {
+export default Compute(topicByUid, function firstNewsByTopic(topic, get) {
   if (!topic.news.length) {
     return;
   }

@@ -1,15 +1,14 @@
+import { Module } from 'cerebral';
 import { set } from 'cerebral/operators';
 import { state, props } from 'cerebral/tags';
 import loadTrending from '../news/signals/loadTrending';
 
-export default {
+export default Module({
   state: {
     loadProgress: 0
   },
   signals: {
-    load: [
-      ...loadTrending
-    ],
+    load: [...loadTrending],
     setProgress: [set(state`app.loadProgress`, props`progress`)]
   }
-};
+});
