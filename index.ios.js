@@ -1,7 +1,7 @@
-import { AppRegistry } from 'react-native';
+// import { AppRegistry } from 'react-native';
 
-import Main from './src/Main';
+// import Main from './src/Main';
 
-export default Main;
+// export default Main;
 
-AppRegistry.registerComponent('HeadlinesReact', () => Main);
+// AppRegistry.registerComponent('HeadlinesReact', () => Main);

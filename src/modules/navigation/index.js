@@ -1,3 +1,4 @@
+import { Module } from 'cerebral';
 import { NavigationActions } from 'react-navigation';
 
 import AppNavigator from '../../AppNavigator';
@@ -8,9 +9,9 @@ const initialState = AppNavigator.router.getStateForAction(
   NavigationActions.init()
 );
 
-export default {
+export default Module({
   state: {
     nav: initialState
   },
   signals
-};
+});

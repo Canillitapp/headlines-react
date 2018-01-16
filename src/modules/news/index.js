@@ -1,8 +1,9 @@
+import { Module } from 'cerebral';
 import moment from 'moment/min/moment-with-locales';
 
 import signals from './signals';
 
-export default {
+export default Module({
   state: {
     entities: {
       topics: {},
@@ -42,4 +43,4 @@ export default {
     }
   },
   signals
-};
+});
