@@ -38,7 +38,7 @@
     "react": "16.2.0",
     "react-native": "0.51.0",
     "react-native-i18n": "2.0.10",
-    "react-native-vector-icons": "4.4.3",
+    "react-native-vector-icons": "4.5.0",
     "react-navigation": "1.0.0-beta.26"
   },
   "devDependencies": {
