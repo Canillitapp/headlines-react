@@ -33,7 +33,7 @@
     "@cerebral/forms": "3.0.1",
     "@cerebral/http": "4.0.1",
     "@cerebral/react": "3.0.1",
-    "cerebral": "4.0.1",
+    "cerebral": "4.1.0",
     "moment": "2.20.1",
     "react": "16.2.0",
     "react-native": "0.52.0",
