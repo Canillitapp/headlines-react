@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:6
+      - image: circleci/node:8
     working_directory: ~/repo
     steps:
       - checkout
@@ -15,12 +15,14 @@ jobs:
           paths:
             - node_modules
           key: test-npm-{{ checksum "package.json" }}
+      - run: npx greenkeeper-lockfile-update
       - run:
           name: Linter
           command: npm run lint
       - run:
           name: Tests
           command: npm test
+      - run: npx greenkeeper-lockfile-upload
   build:
     docker:
       - image: alexruzzarin/rn-android:latest
@@ -33,7 +35,7 @@ jobs:
           keys:
           - build-npm-{{ checksum "package.json" }}
           - build-npm-
-      - run: npm install
+      - run: npm ci
       - save_cache:
           paths:
             - node_modules
