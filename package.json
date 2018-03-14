@@ -39,7 +39,7 @@
     "react-native": "0.54.1",
     "react-native-i18n": "2.0.12",
     "react-native-vector-icons": "4.5.0",
-    "react-navigation": "1.5.2"
+    "react-navigation": "1.5.3"
   },
   "devDependencies": {
     "babel-eslint": "8.2.2",
