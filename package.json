@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@cerebral/forms": "3.2.1",
-    "@cerebral/http": "4.2.1",
+    "@cerebral/http": "4.2.2",
     "@cerebral/react": "3.2.1",
     "cerebral": "4.2.1",
     "moment": "2.22.0",
