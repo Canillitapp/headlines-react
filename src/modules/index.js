@@ -5,7 +5,6 @@ import FormsProvider from '@cerebral/forms';
 import { API_URL } from 'config/env';
 
 import app from './app';
-import navigation from './navigation';
 import news from './news';
 
 export default Module({
@@ -16,7 +15,6 @@ export default Module({
   // Define submodules, namespaced by module path
   modules: {
     app,
-    navigation,
     news
   },
   // Add a global providers when module instantiates
