@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from '@cerebral/react';
 import { state, signal } from 'cerebral/tags';
+import { withNavigation } from 'react-navigation';
 
 import topicByUidCompute from 'compute/topicByUid';
 import firstNewsByTopicCompute from 'compute/firstNewsByTopic';
 
 import Loading from 'components/Loading';
+import Retry from 'components/Retry';
 import CardList from 'components/CardList';
 import CardItem from 'components/CardItem';
 
 export default connect(
   {
+    httpError: state`app.httpError`,
     trendingTopicsKeys: state`news.trending.topics`,
     loading: state`news.trending.loading`,
     loadingMore: state`news.trending.loadingMore`,
@@ -20,7 +23,14 @@ export default connect(
   Highlights
 );
 
-function Highlights({ trendingTopicsKeys, loading, loadingMore, loaded, refresh }) {
+function Highlights({
+  httpError,
+  trendingTopicsKeys,
+  loading,
+  loadingMore,
+  loaded,
+  refresh
+}) {
   const onRefresh = () => {
     refresh({ force: true });
   };
@@ -29,16 +39,18 @@ function Highlights({ trendingTopicsKeys, loading, loadingMore, loaded, refresh 
   };
 
   return (
-    <Loading loading={loading && !loaded} ß>
-      <CardList
-        data={trendingTopicsKeys}
-        renderItem={renderItem}
-        loading={loading}
-        loadingMore={loadingMore}
-        onRefresh={onRefresh}
-        onLoadMore={onLoadMore}
-      />
-    </Loading>
+    <Retry error={httpError} retryFn={onRefresh}>
+      <Loading loading={loading && !loaded} ß>
+        <CardList
+          data={trendingTopicsKeys}
+          renderItem={renderItem}
+          loading={loading}
+          loadingMore={loadingMore}
+          onRefresh={onRefresh}
+          onLoadMore={onLoadMore}
+        />
+      </Loading>
+    </Retry>
   );
 }
 
@@ -46,16 +58,17 @@ function renderItem({ item }) {
   return <HighlightItemHOC key={item} uid={item} />;
 }
 
-const HighlightItemHOC = connect(
-  {
-    topic: topicByUidCompute,
-    news: firstNewsByTopicCompute,
-    show: signal`navigation.navigateToTrendingNews`
-  },
-  HighlightItem
+const HighlightItemHOC = withNavigation(
+  connect(
+    {
+      topic: topicByUidCompute,
+      news: firstNewsByTopicCompute
+    },
+    HighlightItem
+  )
 );
 
-function HighlightItem({ uid, topic, news, show }) {
+function HighlightItem({ uid, topic, news, navigation }) {
   const { topic: title, date, news: newsKeys } = topic;
   const {
     title: newsTitle,
@@ -65,7 +78,7 @@ function HighlightItem({ uid, topic, news, show }) {
   } = news;
 
   const onPress = () => {
-    show({ uid, title });
+    navigation.navigate('TrendingNews', { uid, title });
   };
 
   return (

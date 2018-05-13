@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
-import { BackHandler } from "react-native";
+import { connect } from '@cerebral/react';
+import { signal } from 'cerebral/tags';
 
 import AppNavigator from './AppNavigator';
 
-export default class App extends Component {
-  constructor(...args) {
-    super(...args);
+function getActiveRouteName(navigationState) {
+  if (!navigationState) {
+    return null;
   }
-  componentDidMount() {
-    BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
+  const route = navigationState.routes[navigationState.index];
+  if (route.routes) {
+    return getActiveRouteName(route);
   }
-  componentWillUnmount() {
-    BackHandler.removeEventListener("hardwareBackPress", this.onBackPress);
-  }
-  onBackPress = () => {
-    // const { goBack/* , navState*/ } = this.props;
-    // if (navState.index === 0) {
-    //   return false;
-    // }
-    // goBack();
-    return true;
-  };
-  render() {
-    return <AppNavigator />;
-  }
+  return route.routeName;
 }
 
+export default connect(
+  {
+    TrendingTab: signal`news.loadTrending`,
+    PopularTab: signal`news.loadPopular`,
+    LatestTab: signal`news.loadLatest`
+  },
+  class App extends Component {
+    constructor(...args) {
+      super(...args);
+    }
+
+    onNavigationStateChange = (prevState, currentState) => {
+      const currentScreen = getActiveRouteName(currentState);
+      const prevScreen = getActiveRouteName(prevState);
+
+      if (prevScreen !== currentScreen) {
+        if (this.props[currentScreen]) {
+          this.props[currentScreen]();
+        }
+      }
+    };
+
+    render() {
+      return (
+        <AppNavigator onNavigationStateChange={this.onNavigationStateChange} />
+      );
+    }
+  }
+);

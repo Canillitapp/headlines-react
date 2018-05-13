@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Search from './screens/Search';
@@ -24,7 +24,7 @@ const iconLatest = ({ tintColor }) => (
 // const iconReactions = () => <Icon name="heart-o" color="#fff" size={20} />;
 const iconSearch = <Icon name="search" color={theme.white} size={24} />;
 
-const RootTabs = TabNavigator(
+const RootTabs = createBottomTabNavigator(
   {
     TrendingTab: {
       screen: Highlights,
@@ -76,12 +76,11 @@ const RootTabs = TabNavigator(
         backgroundColor: theme.waterMelon
       },
       upperCaseLabel: false
-    },
-    tabBarPosition: 'bottom'
+    }
   }
 );
 
-const AppNavigator = StackNavigator(
+const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: RootTabs

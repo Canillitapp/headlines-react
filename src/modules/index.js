@@ -1,11 +1,13 @@
 import { Module } from 'cerebral';
-import HttpProvider from '@cerebral/http';
+import HttpProvider, { HttpProviderError } from '@cerebral/http';
 import FormsProvider from '@cerebral/forms';
 
 import { API_URL } from 'config/env';
 
 import app from './app';
 import news from './news';
+
+import {httpErrorThrown} from './app/signals';
 
 export default Module({
   // Define module state, namespaced by module path
@@ -26,5 +28,5 @@ export default Module({
     forms: FormsProvider()
   },
   // Add error catchers
-  catch: []
+  catch: [[HttpProviderError, httpErrorThrown]]
 });

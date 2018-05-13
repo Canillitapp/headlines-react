@@ -3,11 +3,13 @@ import { connect } from '@cerebral/react';
 import { state, props, signal } from 'cerebral/tags';
 
 import Loading from 'components/Loading';
+import Retry from 'components/Retry';
 import NewsList from 'components/NewsList';
 import NewsItem from 'components/NewsItem';
 
 export default connect(
   {
+    httpError: state`app.httpError`,
     news: state`news.popular.keys`,
     loading: state`news.popular.loading`,
     loaded: state`news.popular.loaded`,
@@ -16,19 +18,21 @@ export default connect(
   Popular
 );
 
-function Popular({ news, loading, loaded, refresh }) {
+function Popular({ httpError, news, loading, loaded, refresh }) {
   const onRefresh = () => {
     refresh({ force: true });
   };
   return (
-    <Loading loading={loading && !loaded}>
-      <NewsList
-        data={news}
-        renderItem={renderItem}
-        loading={loading}
-        refresh={onRefresh}
-      />
-    </Loading>
+    <Retry error={httpError} retryFn={onRefresh}>
+      <Loading loading={loading && !loaded}>
+        <NewsList
+          data={news}
+          renderItem={renderItem}
+          loading={loading}
+          refresh={onRefresh}
+        />
+      </Loading>
+    </Retry>
   );
 }
 

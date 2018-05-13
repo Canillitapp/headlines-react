@@ -106,3 +106,8 @@ export const LoadingContainer = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
+export const RetryButton = styled.Button`
+  color: ${theme.waterMelon};
+  background-color: ${theme.tabsBackground};
+`;

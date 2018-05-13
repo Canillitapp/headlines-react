@@ -8,6 +8,7 @@ import setNextTrendingDate from '../actions/setNextTrendingDate';
 import pushTrending from '../actions/pushTrending';
 
 export default [
+  set(state`app.httpError`, false),
   when(state`news.trending.loading`),
   {
     true: [],
