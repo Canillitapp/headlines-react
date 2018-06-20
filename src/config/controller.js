@@ -12,7 +12,7 @@ const controller = Controller(appModule, {
   devtools:
     Devtools &&
     Devtools({
-      host: '192.168.1.107:8585'
+      host: '192.168.0.52:8585'
     }),
   throwToConsole: true
 });

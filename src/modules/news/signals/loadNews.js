@@ -7,6 +7,7 @@ import mergeNews from '../actions/mergeNews';
 
 export default function loadNewsFactory(category) {
   return [
+    set(state`app.httpError`, false),
     when(state`news.${category}.loading`),
     {
       true: [],

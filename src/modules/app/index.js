@@ -5,7 +5,8 @@ import loadTrending from '../news/signals/loadTrending';
 
 export default Module({
   state: {
-    loadProgress: 0
+    loadProgress: 0,
+    httpError: false
   },
   signals: {
     load: [...loadTrending],

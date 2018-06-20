@@ -5,6 +5,7 @@ import { field } from '@cerebral/forms';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Loading from 'components/Loading';
+import Retry from 'components/Retry';
 import EmptyResult from 'components/EmptyResult';
 import NewsList from 'components/NewsList';
 import NewsItem from 'components/NewsItem';
@@ -61,7 +62,7 @@ const SearchButtonHOC = connect(
   {
     search: signal`news.search`
   },
-  function({ search }) {
+  function ({ search }) {
     const onSearch = () => {
       search();
     };
@@ -75,6 +76,7 @@ const SearchButtonHOC = connect(
 
 const SearchListHOC = connect(
   {
+    httpError: state`app.httpError`,
     news: state`news.search.keys`,
     loading: state`news.search.loading`,
     loaded: state`news.search.loaded`,
@@ -83,13 +85,19 @@ const SearchListHOC = connect(
   SearchList
 );
 
-function SearchList({ news, loading, loaded }) {
+function SearchList({ httpError, news, loading, loaded, search }) {
+  const onSearch = () => {
+    search();
+  };
+
   return (
-    <Loading loading={loading && !loaded}>
-      <EmptyResult data={news}>
-        <NewsList data={news} renderItem={renderItem} loading={loading} />
-      </EmptyResult>
-    </Loading>
+    <Retry error={httpError} retryFn={onSearch}>
+      <Loading loading={loading && !loaded}>
+        <EmptyResult data={news}>
+          <NewsList data={news} renderItem={renderItem} loading={loading} />
+        </EmptyResult>
+      </Loading>
+    </Retry>
   );
 }
 

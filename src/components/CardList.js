@@ -37,7 +37,7 @@ export default function CardList({
     <FlatList
       data={data}
       renderItem={renderItem}
-      keyExtractor={k => k}
+      keyExtractor={k => k.toString()}
       refreshing={loading}
       refreshControl={refreshControl}
       onEndReached={onLoadMore}

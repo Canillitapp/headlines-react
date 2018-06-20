@@ -4,10 +4,12 @@ import { state, props, signal } from 'cerebral/tags';
 
 import NewsList from 'components/NewsList';
 import Loading from 'components/Loading';
+import Retry from 'components/Retry';
 import NewsItem from 'components/NewsItem';
 
 export default connect(
   {
+    httpError: state`app.httpError`,
     news: state`news.latest.keys`,
     loading: state`news.latest.loading`,
     loaded: state`news.latest.loaded`,
@@ -16,15 +18,17 @@ export default connect(
   Latest
 );
 
-function Latest({ news, loading, loaded, refresh }) {
+function Latest({ httpError, news, loading, loaded, refresh }) {
   const onRefresh = () => {
     refresh({ force: true });
   };
 
   return (
-    <Loading loading={loading && !loaded}>
-      <NewsList data={news} renderItem={renderItem} loading={loading} refresh={onRefresh} />
-    </Loading>
+    <Retry error={httpError} retryFn={onRefresh}>
+      <Loading loading={loading && !loaded}>
+        <NewsList data={news} renderItem={renderItem} loading={loading} refresh={onRefresh} />
+      </Loading>
+    </Retry>
   );
 }
 

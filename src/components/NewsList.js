@@ -23,7 +23,7 @@ export default function NewsList({ data, renderItem, loading, refresh }) {
     <FlatList
       data={data}
       renderItem={renderItem}
-      keyExtractor={k => k}
+      keyExtractor={k => k.toString()}
       refreshControl={refreshControl}
       ItemSeparatorComponent={renderSeparator}
     />
