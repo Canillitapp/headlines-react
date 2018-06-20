@@ -45,7 +45,7 @@
     "babel-eslint": "8.2.3",
     "babel-jest": "23.0.1",
     "babel-plugin-module-resolver": "3.1.1",
-    "babel-preset-react-native": "5.0.1",
+    "babel-preset-react-native": "4.0.0",
     "eslint": "4.19.1",
     "eslint-config-google": "0.9.1",
     "eslint-config-prettier": "2.9.0",
@@ -56,7 +56,7 @@
     "eslint-plugin-react": "7.9.1",
     "eslint-plugin-react-native": "3.2.1",
     "greenkeeper-lockfile": "1.15.1",
-    "jest": "22.4.3",
+    "jest": "23.1.0",
     "prettier": "1.13.5",
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.4.1",
@@ -72,7 +72,8 @@
       "node_modules/(?!react-native|react-navigation|react-native-vector-icons)"
     ],
     "setupFiles": [
-      "./__mocks__/RNI18n.js"
+      "./__mocks__/RNI18n.js",
+      "./__mocks__/XHR.js"
     ]
   }
 }
