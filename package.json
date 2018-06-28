@@ -57,7 +57,7 @@
     "eslint-plugin-react-native": "3.2.1",
     "greenkeeper-lockfile": "1.15.1",
     "jest": "23.1.0",
-    "prettier": "1.13.5",
+    "prettier": "1.13.6",
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.4.1",
     "styled-components": "3.3.3",
