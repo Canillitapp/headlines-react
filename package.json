@@ -35,8 +35,8 @@
     "@cerebral/react": "3.2.2",
     "cerebral": "4.2.2",
     "moment": "2.22.2",
-    "react": "16.4.1",
-    "react-native": "0.56.0",
+    "react": "^16.5.0",
+    "react-native": "^0.57.1",
     "react-native-i18n": "2.0.13",
     "react-native-vector-icons": "4.6.0",
     "react-navigation": "2.6.2"
