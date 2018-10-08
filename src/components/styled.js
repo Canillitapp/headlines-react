@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import * as theme from 'utils/theme';
-import i18n from 'i18n';
+import * as theme from '../utils/theme';
+import i18n from '../i18n';
 
 export const SearchButton = styled.TouchableOpacity`
   padding: 16px;

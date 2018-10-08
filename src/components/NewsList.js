@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, RefreshControl } from 'react-native';
 
-import { waterMelon } from 'utils/theme';
+import { waterMelon } from '../utils/theme';
 import { NewsSeparator } from './styled';
 
 const renderSeparator = () => {

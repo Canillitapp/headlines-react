@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, RefreshControl, ActivityIndicator } from 'react-native';
 
-import { waterMelon } from 'utils/theme';
+import { waterMelon } from '../utils/theme';
 import { CardLoadMoreIndicatorContainer } from './styled';
 
 export default function CardList({

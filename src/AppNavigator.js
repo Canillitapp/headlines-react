@@ -8,9 +8,9 @@ import HighlightsNews from './screens/HighlightsNews';
 import Popular from './screens/Popular';
 import Latest from './screens/Latest';
 
-import { SearchButton } from 'components/styled';
-import * as theme from 'utils/theme';
-import i18n from 'i18n';
+import { SearchButton } from './components/styled';
+import * as theme from './utils/theme';
+import i18n from './i18n';
 
 const iconTrending = ({ tintColor }) => (
   <Icon name="newspaper-o" color={tintColor} size={20} />
@@ -24,13 +24,13 @@ const iconLatest = ({ tintColor }) => (
 // const iconReactions = () => <Icon name="heart-o" color="#fff" size={20} />;
 const iconSearch = <Icon name="search" color={theme.white} size={24} />;
 
-const RootTabs = createBottomTabNavigator(
+const HomeTabs = createBottomTabNavigator(
   {
     TrendingTab: {
       screen: Highlights,
       path: '/',
       navigationOptions: {
-        title: i18n.t('trendingTitle'),
+        headerTitle: i18n.t('trendingTitle'),
         tabBarLabel: i18n.t('trendingTitle'),
         tabBarIcon: iconTrending
       }
@@ -39,7 +39,7 @@ const RootTabs = createBottomTabNavigator(
       screen: Popular,
       path: '/popular',
       navigationOptions: {
-        title: i18n.t('popularTitle'),
+        headerTitle: i18n.t('popularTitle'),
         tabBarLabel: i18n.t('popularTitle'),
         tabBarIcon: iconPopular
       }
@@ -48,7 +48,7 @@ const RootTabs = createBottomTabNavigator(
       screen: Latest,
       path: '/latest',
       navigationOptions: {
-        title: i18n.t('latestTitle'),
+        headerTitle: i18n.t('latestTitle'),
         tabBarLabel: i18n.t('latestTitle'),
         tabBarIcon: iconLatest
       }
@@ -57,7 +57,7 @@ const RootTabs = createBottomTabNavigator(
     //   screen: News,
     //   path: '/reactions',
     //   navigationOptions: {
-    //     title: i18n.t('reactionsTitle'),
+    //     headerTitle: i18n.t('reactionsTitle'),
     //     tabBarLabel: i18n.t('reactionsTitle'),
     //     tabBarIcon: iconReactions
     //   }
@@ -83,14 +83,34 @@ const RootTabs = createBottomTabNavigator(
 const AppNavigator = createStackNavigator(
   {
     Home: {
-      screen: RootTabs
+      screen: HomeTabs,
+      navigationOptions: ({navigation}) => {
+        const { routeName } = navigation.state.routes[navigation.state.index];
+
+        let headerTitle = '';
+        switch (routeName) {
+          case 'TrendingTab':
+            headerTitle = i18n.t('trendingTitle');
+            break;
+          case 'PopularTab':
+            headerTitle = i18n.t('popularTitle');
+            break;
+          case 'LatestTab':
+            headerTitle = i18n.t('latestTitle');
+            break;
+        }
+
+        return {
+          headerTitle,
+        };
+      }
     },
     TrendingNews: {
       screen: HighlightsNews,
       path: '/trending/:uid',
       navigationOptions: ({ navigation }) => {
         return {
-          title: navigation.state.params.title
+          headerTitle: navigation.state.params.title
         };
       }
     },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 
-import { waterMelon } from 'utils/theme';
+import { waterMelon } from '../utils/theme';
 import { LoadingContainer } from './styled';
 
 export default function Loading({ loading, children }) {

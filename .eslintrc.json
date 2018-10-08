@@ -8,19 +8,12 @@
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
     "google",
     "plugin:react/recommended",
     "plugin:react-native/all",
     "prettier",
     "prettier/react"
   ],
-  "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    }
-  },
   "rules": {
     "new-cap": [
       "error",
