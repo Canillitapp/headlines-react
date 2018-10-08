@@ -27,7 +27,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint './components/**/*.js'",
-    "postversion": "react-native-version"
+    "postversion": "react-native-version --target android"
   },
   "dependencies": {
     "@cerebral/forms": "3.2.2",
