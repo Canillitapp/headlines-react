@@ -103,8 +103,16 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3
         versionName "2.0.1"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
+        // ndk {
+        //     abiFilters "armeabi-v7a", "x86"
+        // }
+    }
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false  // If true, also generate a universal APK
+            include "armeabi-v7a", "x86"
         }
     }
     signingConfigs {
@@ -113,14 +121,6 @@ android {
             storePassword System.getenv("CANILLITA_RELEASE_STORE_PASSWORD")
             keyAlias System.getenv("CANILLITA_RELEASE_KEY_ALIAS")
             keyPassword System.getenv("CANILLITA_RELEASE_KEY_PASSWORD")
-        }
-    }
-    splits {
-        abi {
-            reset()
-            enable enableSeparateBuildPerCPUArchitecture
-            universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86"
         }
     }
     buildTypes {
