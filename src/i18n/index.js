@@ -1,14 +1,13 @@
-import I18n from 'react-native-i18n';
+import RNLanguages from 'react-native-languages';
+import i18n from 'i18n-js';
+
 import en from './locales/en';
 import es from './locales/es';
 import pt from './locales/pt';
 
-I18n.fallbacks = true;
 
-I18n.translations = {
-  en,
-  es,
-  pt
-};
+i18n.locale = RNLanguages.language;
+i18n.fallbacks = true;
+i18n.translations = { en, es, pt };
 
-export default I18n;
+export default i18n;

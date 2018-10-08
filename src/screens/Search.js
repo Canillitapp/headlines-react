@@ -4,14 +4,14 @@ import { state, props, signal } from 'cerebral/tags';
 import { field } from '@cerebral/forms';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Loading from 'components/Loading';
-import Retry from 'components/Retry';
-import EmptyResult from 'components/EmptyResult';
-import NewsList from 'components/NewsList';
-import NewsItem from 'components/NewsItem';
-import { SearchButton, SearchInput } from 'components/styled';
-import * as theme from 'utils/theme';
-import i18n from 'i18n';
+import Loading from '../components/Loading';
+import Retry from '../components/Retry';
+import EmptyResult from '../components/EmptyResult';
+import NewsList from '../components/NewsList';
+import NewsItem from '../components/NewsItem';
+import { SearchButton, SearchInput } from '../components/styled';
+import * as theme from '../utils/theme';
+import i18n from '../i18n';
 
 export default class Search extends Component {
   static navigationOptions = ({ navigation }) => {

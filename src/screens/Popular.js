@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from '@cerebral/react';
 import { state, props, signal } from 'cerebral/tags';
 
-import Loading from 'components/Loading';
-import Retry from 'components/Retry';
-import NewsList from 'components/NewsList';
-import NewsItem from 'components/NewsItem';
+import Loading from '../components/Loading';
+import Retry from '../components/Retry';
+import NewsList from '../components/NewsList';
+import NewsItem from '../components/NewsItem';
 
 export default connect(
   {

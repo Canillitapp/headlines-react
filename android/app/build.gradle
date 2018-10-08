@@ -146,8 +146,8 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-i18n')
     compile project(':react-native-vector-icons')
+    compile project(':react-native-languages')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -159,3 +159,9 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+project.ext.vectoricons = [
+    iconFontNames: [ 'FontAwesome.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
