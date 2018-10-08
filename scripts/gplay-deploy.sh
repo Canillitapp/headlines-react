@@ -1,7 +1,7 @@
 # use curl to download a keystore from $KEY_URL, if set,
 # to the path/filename set in $KEYSTORE.
 AUTH_JSON="/root/repo/scripts/gplay_key.json"
-ARTIFACTS="/root/repo/android/app/build/outputs/apk"
+ARTIFACTS="/root/repo/android/app/build/outputs/apk/release"
 if [[ $AUTH_JSON && ${AUTH_JSON} && $DEPLOY_URL && ${DEPLOY_URL} ]]
 then
     curl -L -o ${AUTH_JSON} ${DEPLOY_URL}
