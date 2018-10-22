@@ -101,7 +101,7 @@ android {
         applicationId "com.headlinesreact"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
+        versionCode 10
         versionName "2.0.3"
         // ndk {
         //     abiFilters "armeabi-v7a", "x86"
