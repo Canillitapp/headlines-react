@@ -1,7 +1,7 @@
 
 # [![Canillitapp](https://github.com/Canillitapp/headlines-api/blob/master/readme-assets/canillitapp_readme_header.png)](https://github.com/Canillitapp)
 
-> it's spelled *can-e-she-tah*.
+> it's pronounced *can-e-she-tah*.
 
 [![CircleCI](https://circleci.com/gh/Canillitapp/headlines-react.svg?style=svg)](https://circleci.com/gh/Canillitapp/headlines-react)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Canillitapp/headlines-react.svg)](https://greenkeeper.io/)
